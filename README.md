@@ -1,3 +1,4 @@
+
 # Farmer Empowerment Management System
 
 ## Overview
@@ -21,7 +22,8 @@ The Farmer Empowerment Management System is a web application aimed at empowerin
 - **JavaScript (JS)**: A popular programming language for building interactive web applications.
 - **TypeScript (TS)**: A superset of JavaScript that adds static typing and other advanced features to the language.
 - **React**: A JavaScript library for building user interfaces.
-- **MongoDB**: A NoSQL database used for storing farmer and farming-related data.
+- **Sequelize ORM**: A promise-based Node.js ORM for PostgreSQL, MySQL, MariaDB, SQLite, and Microsoft SQL Server.
+- **PostgreSQL**: An open-source relational database management system.
 
 ## Getting Started
 
@@ -36,7 +38,7 @@ To get started with the Farmer Empowerment Management System, follow these steps
 2. **Install Dependencies**: Navigate to the project directory and install the dependencies for both the backend (NestJS) and frontend (Next.js) applications:
 
    ```
-   cd farmer-empowerment-management-system
+   cd FEMS
    cd backend
    npm install
    
@@ -44,9 +46,16 @@ To get started with the Farmer Empowerment Management System, follow these steps
    npm install
    ```
 
-3. **Set Up Environment Variables**: Configure the necessary environment variables required for the application to run. Ensure you have MongoDB installed and running, and update the MongoDB connection string in the backend `.env` file.
+3. **Set Up Environment Variables**: Configure the necessary environment variables required for the application to run. Ensure you have PostgreSQL installed and running, and update the database connection string in the backend `.env` file.
 
-4. **Run the Application**: Start the backend server and frontend development server:
+4. **Run Seeders**: Run Sequelize seeders to populate the database with initial data:
+
+   ```
+   cd backend
+   npx sequelize-cli db:seed:all
+   ```
+
+5. **Run the Application**: Start the backend server and frontend development server:
 
    - Start the NestJS backend server:
      ```
@@ -60,7 +69,7 @@ To get started with the Farmer Empowerment Management System, follow these steps
      npm run dev
      ```
 
-5. **Access the Application**: Once the servers are running, you can access the application by navigating to `http://localhost:3000` in your web browser.
+6. **Access the Application**: Once the servers are running, you can access the application by navigating to `http://localhost:3000` in your web browser.
 
 ## Contributing
 
@@ -71,11 +80,7 @@ Contributions to the Farmer Empowerment Management System are welcome! If you'd 
 3. Write tests for your changes if applicable.
 4. Push your changes to your fork and submit a pull request to the `main` branch of the main repository.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
-- Thanks to the developers and contributors of NestJS, Next.js, React, and other open-source projects used in this project.
-- Special thanks to all the farmers whose feedback and insights have helped shape this application.
+- Thanks to the developers and contributors of NestJS, Next.js, React, Sequelize ORM, PostgreSQL, and other open-source projects used in this project.

@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Bismillah@123",
+    "database": "lms",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres",
+    "password": "Bismillah@123",
+    "database": "lms",
+    "host": "localhost",
+    "dialect": "postgres"
+  },
+  "production": {
+    
+    "username": "postgres",
+    "password": "Bismillah@123",
+    "database": "lms",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

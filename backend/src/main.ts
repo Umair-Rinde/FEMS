@@ -8,6 +8,9 @@ import { CustomeExceptionsFilter } from './core/filters';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+<<<<<<< HEAD
+  await app.listen(4000);
+=======
 
   const config = app.get(ConfigService);
 
@@ -35,5 +38,6 @@ async function bootstrap() {
     forbidUnknownValues:false,
   }));
   await app.listen(config.get('PORT'));
+>>>>>>> c65c611213a3006a7376aa2a615d4dd9e7be182a
 }
 bootstrap();

@@ -112,17 +112,4 @@ export class MyBaseModel extends Model {
       throw error;
     }
   }
-
-  @AfterBulkCreate
-  static async bulkCreateMetaData(baseModels: MyBaseModel[]): Promise<void> {
-    try {
-      for (const baseModel of baseModels) {
-        baseModel.slug = this.toSlugFormat(baseModel.slug);
-        await this.createOrUpdateMetaData(baseModel);
-      }
-    } catch (error) {
-      console.error('Error creating MetaData in bulk:', error);
-      throw error;
-    }
-  }
 }

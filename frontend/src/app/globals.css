@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -16,16 +19,42 @@
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
-.bg-green-1 {
-  background: #FFFFFF99;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* hide for chrome, safari and opera */
+  .hide-scrollbar::-webkit-scrollbar{
+    display: none;
+  }
+  /* hide for IE,edge and firefox */
+  .hide-scrollbar{
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+  }
 }
 
-.bg-green-2 {
-  background: #B3FFB3;
+.nav-text-style{
+  @apply w-full flex pt-2 pb-2 text-sm font-bold hover:bg-[#3eff4b] hover:text-white  
+}
+.nav-icon-style{
+  @apply text-base font-extrabold pl-4 pr-2;
+}
+.bg-image{
+  background-image: linear-gradient(to right,black 1px,
+  transparent 1px),linear-gradient(to bottom,black 1px,
+  transparent 1px
+  );
+  background-size: 5vh 5vh;
+  background-color: rgb(255, 255, 255);
 }

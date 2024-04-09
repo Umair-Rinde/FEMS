@@ -7,15 +7,15 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb:255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb:255, 255, 255;
+    --background-end-rgb:255, 255, 255;
   }
 }
 
@@ -45,16 +45,8 @@ body {
 }
 
 .nav-text-style{
-  @apply w-full flex pt-2 pb-2 text-sm font-bold hover:bg-[#3eff4b] hover:text-white  
+  @apply w-full flex pt-3 text-black pb-2 md:text-[13px] text-sm font-bold  hover:bg-[#3eff4b] hover:text-white   active:bg-[#3eff4b]
 }
 .nav-icon-style{
   @apply text-base font-extrabold pl-4 pr-2;
-}
-.bg-image{
-  background-image: linear-gradient(to right,black 1px,
-  transparent 1px),linear-gradient(to bottom,black 1px,
-  transparent 1px
-  );
-  background-size: 5vh 5vh;
-  background-color: rgb(255, 255, 255);
 }

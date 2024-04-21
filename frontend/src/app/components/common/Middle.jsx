@@ -4,7 +4,7 @@ import { BsHouse, BsChat, BsGear } from 'react-icons/bs';
 import Link from 'next/link';
 
 import HomePage from "../Pages/HomePage";
-import Weather from '../Pages/weather';
+import EditProfile from '../Pages/EditProfile';
 
 export default function Middle() {
     const [link, setLink] = useState("Homepage");
@@ -128,7 +128,7 @@ export default function Middle() {
 
             <div className="h-[90vh] md:w-[80%] overflow-scroll hide-scrollbar">
                <HomePage />
-               <Weather/>
+               <EditProfile/>
             </div>
 
         </div>

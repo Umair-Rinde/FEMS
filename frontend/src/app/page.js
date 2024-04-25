@@ -1,7 +1,7 @@
 
 const Home = () => {
   return (
-    <main>
+    <main className="w-screen min-h-screen">
       
     </main>
   )

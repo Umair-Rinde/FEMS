@@ -9,8 +9,49 @@ import Link from 'next/link';
 
 const Login = () => {
 
-    const [username, setUsername] = useState('');
+    const [email, setemail] = useState('');
     const [password, setPassword] = useState('');
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        if(!email){
+            alert("Please enter email");
+            return;
+        }
+        if(!password){
+            alert("Please enter password");
+            return;
+        }
+
+        let requestBody = JSON.stringify({
+            email,
+            password,
+        });
+
+        try {
+            let res = await fetch("http://localhost:5500/api/v1/user/auth/login", {
+                method: 'POST',
+                body: requestBody,
+                headers: { 'Content-Type': 'application/json'}
+            });
+    
+            res = await res.json();
+            console.log(res);
+            // remove true when api successfully connected
+            if(res.success){
+                let uid = res.data.user.id;
+                alert("logined successfully");
+                localStorage.setItem('uid', uid);
+                // push to teaching staffs page
+                router.push('/');
+            }else{
+                alert("Wrong password"); 
+            }
+        } catch (error) {
+            console.warn(error);
+        }   
+    }
+   
 
     return (
         <main className="h-screen w-screen bg-green-800 flex justify-end">
@@ -34,10 +75,10 @@ const Login = () => {
                     </h2>
                     <form className="w-full flex flex-col items-center gap-3">
                         <InputField 
-                            placeholder="Username"
-                            value={username}
+                            placeholder="email"
+                            value={email}
                             icon={<CiUser />}
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={(e) => setemail(e.target.value)}
                         />
                         <InputField 
                             placeholder="Password"
@@ -47,7 +88,8 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <Link href="/forgot-password" className="font-semibold text-xs my-2">Forgot password?</Link>
-                        <button className="bg-black hover:bg-gray-800 w-full py-3 text-sm font-semibold text-center text-white rounded-2xl">
+                        <button className="bg-black hover:bg-gray-800 w-full py-3 text-sm font-semibold text-center text-white rounded-2xl"
+                        onClick={handleSubmit}>
                             Login
                         </button>
                         <divider className="flex items-center w-full justify-center my-1">

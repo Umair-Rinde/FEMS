@@ -32,7 +32,7 @@ async function bootstrap() {
     skipNullProperties:false,
     skipUndefinedProperties:false,
     forbidNonWhitelisted:false,
-    forbidUnknownValues:false,
+    forbidUnknownValues:false, 
   }));
   await app.listen(config.get('PORT'));
 }

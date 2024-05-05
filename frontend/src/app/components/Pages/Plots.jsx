@@ -75,7 +75,6 @@ const PlotsForm = () => {
                 <button className="px-4 py-1 bg-gray-300 hover:bg-blue-800 rounded-lg"
                     onClick={onSubmitHandler}
                 >Submit</button>
-                <button className="px-4 py-1 bg-gray-300 hover:bg-gray-400 rounded-lg">Edit a Field</button>
             </div>
         </form>
     )

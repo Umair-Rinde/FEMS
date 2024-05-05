@@ -2,27 +2,29 @@
 import { useState } from "react";
 import InputField from "../common/InputField";
 
-const CropStockForm = () => {
+const CropPlanningForm = () => {
     const [cropcode, setCropCode] = useState('');
     const [variety, setVariety] = useState('');
     const [season, setSeason] = useState('');
 
-    const [quality, setQuality] = useState('');
-    const [sold, setSold] = useState('');
-    const [harvestdate, setHarvestDate] = useState('');
+    const [plotnumber, setPlotNumber] = useState('');
+    const [area, setArea] = useState('');
+    const [isMixedCrop, setIsMixedCroping] = useState(null);
 
-    const [selldate, setSellDate] = useState('');
-    const [other, setOther] = useState('');
+    const [seedRequired, setSeedRequired] = useState('');
+    const [fertilizerRequired, setFertilizerRequired] = useState('');
+    const [manpowerMachinery, setManpowerMachinery] = useState('');
 
     function reset(){
         setCropCode('');
         setVariety('');
         setSeason('');
-        setQuality('');
-        setSold('');
-        setHarvestDate('');
-        setSellDate('');
-        setOther('');
+        setPlotNumber('');
+        setArea('');
+        setIsMixedCroping(null);
+        setSeedRequired('');
+        setFertilizerRequired('');
+        setManpowerMachinery('');
     }
 
     function onSubmitHandler(e) {
@@ -57,33 +59,50 @@ const CropStockForm = () => {
             </div>
             <div className="w-full flex items-center gap-4 justify-between">
                 <InputField
-                    label="Quality"
-                    value={quality}
-                    setValue={setQuality}
+                    label="Plot Number"
+                    value={plotnumber}
+                    setValue={setPlotNumber}
                 />
                 <InputField 
-                    label="Sold"
-                    value={sold}
-                    setValue={setSold}
+                    label="Area"
+                    value={area}
+                    setValue={setArea}
                 />
-                <InputField 
-                    label="Harvest Date"
-                    value={harvestdate}
-                    setValue={setHarvestDate}
-                />
+                <span className="flex flex-col gap-2 w-full">
+                        <label className="text-sm font-semibold">Mixed Cropping</label>
+                        <span
+                            className="px-2 py-1 flex gap-2 items-center"
+                        >
+                            <input 
+                                type="radio" name="mixed"
+                                onClick={(e) => setIsMixedCroping(true)}
+                            /> 
+                            <label className="mr-2">Yes</label>
+                            <input
+                                type="radio" name="mixed"
+                                onClick={(e) => setIsMixedCroping(false)}
+                            /> 
+                            <label>No</label>
+                        </span>
+                </span>
             </div>
             <div className="w-full flex items-center gap-4 justify-between">
                 <InputField
-                    label="Sell Date"
-                    value={selldate}
-                    setValue={setSellDate}
+                    label="Seed Required"
+                    value={seedRequired}
+                    setValue={setSeedRequired}
                 />
                 <InputField 
-                    label="Other"
-                    value={other}
-                    setValue={setOther}
+                    label="Fertilizer Required"
+                    value={fertilizerRequired}
+                    setValue={setFertilizerRequired}
                 />
-                <dummy className="w-full"></dummy>
+                <InputField 
+                    label="Manpower & Manchinery Required"
+                    value={manpowerMachinery}
+                    setValue={setManpowerMachinery}
+                />
+                
             </div>
             <div className="w-full flex items-center gap-4 justify-between">
                 <dummy className="w-full"></dummy>
@@ -98,4 +117,4 @@ const CropStockForm = () => {
     )
 }
 
-export default CropStockForm;
+export default CropPlanningForm;

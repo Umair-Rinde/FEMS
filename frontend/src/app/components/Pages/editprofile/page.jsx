@@ -1,3 +1,4 @@
+'use client' 
 import { BsPlusCircleFill, BsPencil } from 'react-icons/bs'
 import { useState } from 'react';
 
@@ -29,7 +30,7 @@ const EditProfile = () => {
           <h1 className="text-2xl font-bold mb-4">Edit Profile</h1>
         </span>
         <hr className='border-1 border-[#34ff34] my-2' />
-        <div className='flex p-2 mb-4 bg-white rounded-3xl shadow-xl'>
+        <div className='flex p-2 mb-4 bg-black text-white rounded-sm shadow-sm'>
           <img src="https://th.bing.com/th/id/OIP.MCmM1b-hj0SntnEkvZNAnwAAAA?rs=1&pid=ImgDetMain" className="w-10 h-10 bg-white rounded-3xl mr-2" />
           <div>
             <p className='text-sm font-semibold'>Oscar</p>

@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from 'react';
 import { BsPlusCircle, BsInfoCircle } from 'react-icons/bs'
 

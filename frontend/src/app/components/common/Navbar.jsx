@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BsCloudSun,BsFilterLeft, BsShare } from 'react-icons/bs';
 import logo from '@/images/logo.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 export default function Navbar() {
@@ -47,9 +48,17 @@ export default function Navbar() {
           </div>
 
           <div className='flex md:w-[20%] w-screen justify-end gap-2 '>
-            <span className='text-2xl flex items-center justify-center text-blue-500 p-1  rounded-md' title='Weather Info'><BsCloudSun /></span>
-            <span className='text-sm flex items-center justify-centertext-black text-[#3eff4b] font-extrabold p-2 rounded-md' title="Share to"><BsShare /></span>
-            <img src='https://th.bing.com/th/id/OIP.MCmM1b-hj0SntnEkvZNAnwAAAA?rs=1&pid=ImgDetMain' alt="" className='w-8 h-8  flex justify-center align-middle object-cover rounded-2xl shadow-xl border-1 border-black' title='Account' />
+            {/* <span className='text-2xl flex items-center justify-center text-blue-500 p-1  rounded-md' title='Weather Info'><BsCloudSun /></span> */}
+            <span className='text-sm flex items-center justify-centertext-black text-white bg-[#3eff4b] font-extrabold p-2 rounded-md gap-2' title="Share to"><BsShare /> Share</span>
+            
+
+            <Link href="/components/Pages/editprofile">
+            <img 
+            src='https://th.bing.com/th/id/OIP.MCmM1b-hj0SntnEkvZNAnwAAAA?rs=1&pid=ImgDetMain' 
+            alt="profileImg" 
+            className='w-8 h-8  flex justify-center align-middle object-cover rounded-2xl shadow-xl border-1 border-black' 
+            title='Account' />
+            </Link>
           </div>
 
         </div>

@@ -5,14 +5,14 @@ import Link from 'next/link';
 export default function SideNavbar() {
   return (
       <div className="md:flex hidden w-full flex-col bg-white border-r-2">
-              <Link href='/' >
+              <Link href='/components/Pages/home' >
                 <ul className='nav-text-style' >
                   <span className='nav-icon-style'><BsHouse /></span>
                   Home
                 </ul>
               </Link>
 
-              <Link href='/crop' >
+              <Link href='/components/Pages/crop' >
                 <ul className='nav-text-style' >
                   <span className='nav-icon-style'><BsChat /></span>
                   Crop

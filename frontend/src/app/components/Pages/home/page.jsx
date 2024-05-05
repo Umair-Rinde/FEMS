@@ -6,25 +6,25 @@ export default function HomePage() {
   return (
     <div className='w-full'>
 
-      <div className='w-full h-[22vh] flex overflow-x-scroll hide-scrollbar gap-2 p-2'>
-        <div className="md:min-w-[33%] min-w-[50%] h-[20vh] bg-[#CCFFCC] md:rounded-md rounded-2xl p-4 shadow-md md:border-2">
+      <div className='w-full h-1/4 flex overflow-x-scroll hide-scrollbar gap-2 p-2'>
+        <div className="md:min-w-[33%] min-w-[50%] h-full bg-[#CCFFCC] md:rounded-md rounded-2xl p-4 shadow-md md:border-2">
           <p className='font-bold'>Highest Demand</p>
           <p className='text-2xl font-bold py-2'>Rice</p>
           <p className='text-[#34ff34] font-bold'>+100% per kg in months</p>
         </div>
-        <div className="md:min-w-[33%] min-w-[50%] h-[20vh] bg-[#CCFFCC] md:rounded-md rounded-2xl p-4 shadow-md md:border-2">
-          <p className='font-bold'>Highest Demand</p>
-          <p className='text-2xl font-bold py-2'>Rice</p>
-          <p className='text-[#34ff34] font-bold'>+100% per kg in months</p>
-        </div>
-
-        <div className="md:min-w-[33%] min-w-[50%] h-[20vh] bg-[#CCFFCC] md:rounded-md rounded-2xl p-4 shadow-md md:border-2">
+        <div className="md:min-w-[33%] min-w-[50%] h-full bg-[#CCFFCC] md:rounded-md rounded-2xl p-4 shadow-md md:border-2">
           <p className='font-bold'>Highest Demand</p>
           <p className='text-2xl font-bold py-2'>Rice</p>
           <p className='text-[#34ff34] font-bold'>+100% per kg in months</p>
         </div>
 
-        <div className="md:min-w-[33%] min-w-[50%] h-[20vh] bg-[#CCFFCC] md:rounded-md rounded-2xl p-4 shadow-md md:border-2">
+        <div className="md:min-w-[33%] min-w-[50%] h-full bg-[#CCFFCC] md:rounded-md rounded-2xl p-4 shadow-md md:border-2">
+          <p className='font-bold'>Highest Demand</p>
+          <p className='text-2xl font-bold py-2'>Rice</p>
+          <p className='text-[#34ff34] font-bold'>+100% per kg in months</p>
+        </div>
+
+        <div className="md:min-w-[33%] min-w-[50%] h-full bg-[#CCFFCC] md:rounded-md rounded-2xl p-4 shadow-md md:border-2">
           <p className='font-bold'>Highest Demand</p>
           <p className='text-2xl font-bold py-2'>Rice</p>
           <p className='text-[#34ff34] font-bold'>+100% per kg in months</p>

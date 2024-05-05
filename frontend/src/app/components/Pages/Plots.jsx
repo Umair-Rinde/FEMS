@@ -2,27 +2,22 @@
 import { useState } from "react";
 import InputField from "../common/InputField";
 
-const CropStockForm = () => {
-    const [cropcode, setCropCode] = useState('');
-    const [variety, setVariety] = useState('');
-    const [season, setSeason] = useState('');
+const PlotsForm = () => {
+    const [plotNumber, setPlotNumber] = useState('');
+    const [plotName, setPlotName] = useState('');
+    const [plotSize, setPlotSize] = useState('');
 
-    const [quality, setQuality] = useState('');
-    const [sold, setSold] = useState('');
-    const [harvestdate, setHarvestDate] = useState('');
-
-    const [selldate, setSellDate] = useState('');
-    const [other, setOther] = useState('');
+    const [plotGatNo, setPlotGatNo] = useState('');
+    const [soiltype, setSoilType] = useState('');
+    const [ownership, setOwnership] = useState('');
 
     function reset(){
-        setCropCode('');
-        setVariety('');
-        setSeason('');
-        setQuality('');
-        setSold('');
-        setHarvestDate('');
-        setSellDate('');
-        setOther('');
+        setPlotNumber('');
+        setPlotName('');
+        setPlotSize('');
+        setPlotGatNo('');
+        setSoilType('');
+        setOwnership('');
     }
 
     function onSubmitHandler(e) {
@@ -40,50 +35,37 @@ const CropStockForm = () => {
             <dummy className="w-full"></dummy>
             <div className="w-full flex items-center gap-4 justify-center font-semibold">
                 <InputField
-                    label="Crop Code"
-                    value={cropcode}
-                    setValue={setCropCode}
+                    label="Plot Number"
+                    value={plotNumber}
+                    setValue={setPlotNumber}
                 />
                 <InputField 
-                    label="Variety"
-                    value={variety}
-                    setValue={setVariety}
+                    label="Plot Name"
+                    value={plotName}
+                    setValue={setPlotName}
                 />
                 <InputField 
-                    label="Season"
-                    value={season}
-                    setValue={setSeason}
+                    label="Plot Size"
+                    value={plotSize}
+                    setValue={setPlotSize}
                 />
             </div>
             <div className="w-full flex items-center gap-4 justify-between">
                 <InputField
-                    label="Quality"
-                    value={quality}
-                    setValue={setQuality}
+                    label="Plot Gat. Number"
+                    value={plotGatNo}
+                    setValue={setPlotGatNo}
                 />
                 <InputField 
-                    label="Sold"
-                    value={sold}
-                    setValue={setSold}
+                    label="Soil Type"
+                    value={soiltype}
+                    setValue={setSoilType}
                 />
                 <InputField 
-                    label="Harvest Date"
-                    value={harvestdate}
-                    setValue={setHarvestDate}
+                    label="Ownership"
+                    value={ownership}
+                    setValue={setOwnership}
                 />
-            </div>
-            <div className="w-full flex items-center gap-4 justify-between">
-                <InputField
-                    label="Sell Date"
-                    value={selldate}
-                    setValue={setSellDate}
-                />
-                <InputField 
-                    label="Other"
-                    value={other}
-                    setValue={setOther}
-                />
-                <dummy className="w-full"></dummy>
             </div>
             <div className="w-full flex items-center gap-4 justify-between">
                 <dummy className="w-full"></dummy>
@@ -99,4 +81,4 @@ const CropStockForm = () => {
     )
 }
 
-export default CropStockForm;
+export default PlotsForm;

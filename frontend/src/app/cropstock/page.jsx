@@ -5,7 +5,7 @@ import Navbar from "../components/common/Navbar";
 
 const CropStockPage = () => {
   return (
-    <main className="flex w-screen min-h-screen flex-col items-center">
+    <main className="flex w-screen min-h-screen flex-col items-center transtion-all duration-200 ease-linear">
     <Navbar />
       <div className="flex w-full py-2 bg-[#ccffcc]">
       <div className="w-1/6"><SideNavbar /></div>

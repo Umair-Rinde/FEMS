@@ -31,7 +31,7 @@ const CropStockForm = () => {
     }
 
     return (
-        <form className="flex flex-col gap-5 w-full justify-center opacity-100">
+        <form className="flex flex-col gap-5 w-full h-full justify-center opacity-100 transtion-all duration-200 ease-linear">
             <div className="w-full flex items-center gap-4 justify-center">
                 <dummy className="w-full-4/5"></dummy>
                 <button className="font-semibold px-4 py-1 bg-green-400 hover:bg-gray-400 rounded-lg">+ Add Another Crop Plan</button>

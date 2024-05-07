@@ -44,3 +44,19 @@
 .nav-icon-style{
   @apply text-base font-extrabold pl-4 pr-2;
 }
+
+table {
+  @apply border-[1px] border-white text-sm;
+}
+
+table th {
+  @apply text-center text-white font-medium bg-[#34ff34];
+}
+
+table th, table td {
+  @apply px-3 py-2 border-white border-[0.3px] text-center;
+}
+
+table td{
+  @apply bg-[#B3FFB3];
+}

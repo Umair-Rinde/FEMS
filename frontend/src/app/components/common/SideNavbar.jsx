@@ -28,7 +28,7 @@ export default function SideNavbar() {
               </Link>
 
 
-              <Link href='/cropStock'>
+              <Link href='/components/Pages/cropStock'>
                 <ul className='nav-text-style' >
                   <span className='nav-icon-style'><BsChat /></span>
                   Crop Stock

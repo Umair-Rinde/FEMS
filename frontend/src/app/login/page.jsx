@@ -6,11 +6,15 @@ import { useState } from 'react';
 import { CiUser, CiLock} from 'react-icons/ci';
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
+import { useRouter } from "next/navigation";
+
 
 const Login = () => {
 
     const [email, setemail] = useState('');
     const [password, setPassword] = useState('');
+    const router = useRouter();
+
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -43,7 +47,7 @@ const Login = () => {
                 alert("logined successfully");
                 localStorage.setItem('uid', uid);
                 // push to teaching staffs page
-                router.push('/');
+                router.push('/home');//this should do the redirection
             }else{
                 alert("Wrong password"); 
             }

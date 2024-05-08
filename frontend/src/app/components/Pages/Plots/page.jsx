@@ -42,7 +42,6 @@ const PlotsForm = () => {
     }
 
     function addPlotDetails(e) {
-        // Logic to add these to teaching staff rows
         e.preventDefault();
         if(isValidData()){
             savePlotsData();

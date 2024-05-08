@@ -1,5 +1,8 @@
-import { Column, Table } from "sequelize-typescript";
+import { Column, DataType, ForeignKey, HasMany, HasOne, Table } from "sequelize-typescript";
 import { MyBaseModel } from "src/core/base.model";
+import { Crops } from "../crops/crops.model";
+import { User } from "src/modules/user/users/models/user.model";
+import { Plots } from "../plot/plot.model";
 
 @Table({
     tableName:'Farmers',
@@ -19,9 +22,18 @@ export class FarmerInfo extends MyBaseModel{
     @Column
     region :string
     
-    @Column
-    crops: string 
+    @HasMany(()=>Crops)
+    crops: Crops[]
 
-    @Column
+    @HasMany(()=>Plots)
+    plots: Plots[]
+
+    @Column({
+        type:DataType.TEXT
+    })
     aboutYou: string
+
+    @ForeignKey(()=>User)
+    userId:string
+
 }

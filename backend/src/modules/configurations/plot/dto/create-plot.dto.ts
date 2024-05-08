@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsString } from "class-validator";
 
-export class CreateRegionDto {
+export class CreatePlotDto {
     @IsString()
     @IsNotEmpty()
     state:string

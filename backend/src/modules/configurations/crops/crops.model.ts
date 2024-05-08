@@ -1,6 +1,7 @@
 import { Column, ForeignKey, Table } from "sequelize-typescript";
 import { MyBaseModel } from "src/core/base.model";
-import { Region } from "../region/region.model";
+import { FarmerInfo } from "../farmerInfo/farmerinfo.model";
+import { Plots } from "../plot/plot.model";
 
 @Table({
     tableName:'crops',
@@ -17,6 +18,10 @@ export class Crops extends MyBaseModel{
     description:string
 
     @Column
-    @ForeignKey(()=> Region)
-    regionId:string 
+    @ForeignKey(()=> Plots)
+    plotId:string 
+
+    @Column
+    @ForeignKey(()=>FarmerInfo)
+    farmerId:string
 }

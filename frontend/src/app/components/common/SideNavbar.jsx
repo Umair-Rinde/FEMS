@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function SideNavbar() {
   return (
       <div className="md:flex hidden w-full flex-col bg-white border-r-2">
-              <Link href='/components/Pages/home' >
+              <Link href='/home' >
                 <ul className='nav-text-style' >
                   <span className='nav-icon-style'><BsHouse /></span>
                   Home

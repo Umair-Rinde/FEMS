@@ -1,14 +1,17 @@
 'use client'
 import React, { useState } from 'react';
 import { BsCloudSun,BsFilterLeft, BsShare } from 'react-icons/bs';
-import logo from '@/images/logo.png';
-import Image from 'next/image';
 import Link from 'next/link';
+import {toast} from 'react-toastify';
 
 
 export default function Navbar() {
 
   const [msg, setMsg] = useState("");
+
+  const handleSendButtonClick = ()=>{
+    toast.info("Search Bar In Progress.."+'\n'+'</> Thank You.');
+  }
 
   return (
     <nav className='w-screen h-[50px] flex bg-white border-b-2 p-2 ' >

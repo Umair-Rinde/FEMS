@@ -44,3 +44,7 @@
 .nav-icon-style{
   @apply text-base font-extrabold pl-4 pr-2;
 }
+/* npm i react-toastify + Adjust react toast font size */
+.toastBody {
+  @apply text-sm space-x-1 md:m-2;
+}

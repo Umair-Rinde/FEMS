@@ -1,15 +1,24 @@
 'use client'
 import React, { useState } from 'react';
-import { BsPlusCircle, BsInfoCircle } from 'react-icons/bs'
+import { BsPlusCircle, BsInfoCircle } from 'react-icons/bs';
+import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 
 const GeneralInformation = () => {
+
   const [state, setState] = useState('');
   const [pinCode, setPinCode] = useState('');
   const [districts, setDistricts] = useState('');
   const [region, setRegion] = useState('');
   const [crops, setCrops] = useState(['']); // Initial crop field
   const [aboutYou, setAboutYou] = useState('');
+
+  const handleOnClickSubmit = ()=>{
+    
+    toast.success("You Succesfully Register To Farmer Empowerment App!");
+  }
+
 
   // Function to handle adding a new crop field
   const handleAddCrop = () => {
@@ -110,7 +119,12 @@ const GeneralInformation = () => {
             onChange={(e) => setAboutYou(e.target.value)} className="w-full p-2 my-1 border rounded-sm font-normal" />
           </label>
 
-          <button type="submit" className="bg-black text-white px-4 py-1 ml-2 rounded-sm font-semibold shadow-md">Save</button>
+          <Link href='/login'>
+          <button
+          onClick={handleOnClickSubmit}
+          type="submit" 
+          className="bg-black text-white px-4 py-1 ml-2 rounded-sm font-semibold shadow-md">Save</button>
+          </Link>
         </form>
 
       </div>

@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from '@/images/logo.png';
-import Image from 'next/image';
-import Layout from '../../common/Layout';
+// import logo from '@/images/logo.png';
+// import Image from 'next/image';
+// import Layout from '../../common/Layout';
 
 export default function HomePage() {
   return (
 
-    <Layout>
+    // <Layout>
     <div className='w-full'>
 
       <div className='w-full h-1/4 flex overflow-x-scroll hide-scrollbar gap-2 p-2'>
@@ -106,6 +106,6 @@ export default function HomePage() {
 
 
     </div>
-    </Layout>
+    // </Layout>
   );
 }

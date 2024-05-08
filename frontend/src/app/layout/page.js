@@ -1,16 +1,10 @@
-import HeroSection from "../components/common/HeroSection";
-import Navbar from "../components/common/Navbar";
-import Middle from "../components/common/Middle";
-import Footer from "../components/common/Footer";
+import Layout from "../components/common/Layout";
+
 
 const Home = () => {
   return (
-    <main className="w-full min-h-screen flex flex-col items-center">
-      <HeroSection />
-      <Navbar />
-      <Middle/>
-      <Footer/>
-      
+    <main>
+      <Layout/>
     </main>
   )
 }

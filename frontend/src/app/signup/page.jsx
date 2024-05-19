@@ -3,6 +3,7 @@ import { useState } from 'react';
 import logo from '@/images/logo.png';
 import Image from 'next/image';
 import { BsGoogle, BsFacebook, BsInstagram, BsTelegram, BsTwitterX } from 'react-icons/bs';
+import Link from 'next/link';
 
 export default function page() {
   const [firstName, setFirstName] = useState('');
@@ -176,12 +177,14 @@ export default function page() {
               </label>
 
             </div>
+            <Link href="/generalInformation">
             <button
               type="submit"
               className="bg-black text-sm text-white p-3 rounded-3xl w-full font-bold"
             >
               Submit
             </button>
+            </Link>
           </form>
           <div className="text-center m-2 text-blue-800">
             Already have an account? <a href="#">Sign In</a>

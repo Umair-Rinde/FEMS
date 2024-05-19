@@ -17,6 +17,15 @@
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
+  /* hide for chrome, safari and opera */
+  .hide-scrollbar::-webkit-scrollbar{
+    display: none;
+  }
+  /* hide for IE,edge and firefox */
+  .hide-scrollbar{
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+  }
 }
 
 body {
@@ -57,4 +66,10 @@ body {
   );
   background-size: 5vh 5vh;
   background-color: rgb(255, 255, 255);
+}
+.nav-text-style{
+  @apply w-full flex pt-3 text-gray-800 pb-2 md:text-[13px] text-sm font-bold  hover:text-[#3eff4b] hover:border-l-green-500 border-l-4 
+}
+.nav-icon-style{
+  @apply text-base font-extrabold pl-4 pr-2;
 }

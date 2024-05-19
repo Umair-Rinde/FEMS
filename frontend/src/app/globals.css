@@ -48,3 +48,25 @@
 .toastBody {
   @apply text-sm space-x-1 md:m-2;
 }
+.nav-text-style{
+  @apply w-full flex pt-3 text-gray-800 pb-2 md:text-[13px] text-sm font-bold  hover:text-[#3eff4b] hover:border-l-green-500 border-l-4 
+}
+.nav-icon-style{
+  @apply text-base font-extrabold pl-4 pr-2;
+}
+
+table {
+  @apply border-[1px] border-white text-sm;
+}
+
+table th {
+  @apply text-center text-white font-medium bg-[#34ff34];
+}
+
+table th, table td {
+  @apply px-3 py-2 border-white border-[0.3px] text-center;
+}
+
+table td{
+  @apply bg-[#B3FFB3];
+}

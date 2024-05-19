@@ -34,8 +34,6 @@ const CropStockForm = () => {
 
     return (
         <>
-       <Layout>
-    
         <div className="w-full h-screen bg-[#ccffcc] p-4  m-auto flex flex-col justify-center items-center">
         
         <form className="flex flex-col w-full gap-2 justify-center p-4 bg-[#e5ffe5]">
@@ -49,7 +47,7 @@ const CropStockForm = () => {
 
             <div className="w-full flex items-center gap-4 justify-end ">
                 <dummy className="w-full-4/5"></dummy>
-                <button className="font-semibold px-4 py-1  text-white bg-[#34ff34] rounded-sm flex gap-2 items-center hover:text-white hover:bg-[#42cd42]"><BsDatabaseFillAdd/>Add Another Crop Plan</button>
+                <button className="font-semibold px-4 py-1  text-white bg-[#34ff34] rounded-sm flex gap-2 items-center hover:text-white hover:bg-[#42cd42]"><BsDatabaseFillAdd/>Add Another Crop Stock</button>
             </div>
             <div className="w-full lg:flex  items-center gap-4 justify-center font-semibold">
                 <InputField
@@ -114,8 +112,6 @@ const CropStockForm = () => {
 
         </div>
 
-        </Layout>
-    
         </>
     )
 }

@@ -24,7 +24,7 @@ export default function Navbar() {
 
         <div className='flex w-[80%]'>
 
-          <div className='md:flex hidden w-[80%] justify-start gap-2 '>
+          <div className='md:flex hidden w-[80%] justify-start gap-2'>
             <input
               type="text"
               placeholder='Search Here..'
@@ -36,14 +36,14 @@ export default function Navbar() {
                   handleSendButtonClick();
                 }
               }}
-              className='text-sm border-2 border-zinc-300  border-b-[#3eff4b] p-3 w-[50%] text-black rounded-lg' />
+              className='text-sm border-2 border-zinc-300 rounded-sm border-b-[#3eff4b] p-3 w-[50%] text-black' />
 
-            <select name="Region" id="region" className='text-sm border-2 rounded-lg border-zinc-300 px-4 border-b-[#3eff4b]  text-neutral-950'>
+            <select name="Region" id="region" className='text-sm border-2 border-zinc-300 px-4 border-b-[#3eff4b]  text-neutral-950'>
               <option value="region1">region</option>
               <option value="region2">region2</option>
             </select>
 
-            <select name="Language" id="lang" className=' text-sm border-2 rounded-lg border-zinc-300 border-b-[#3eff4b] px-4 text-black'>
+            <select name="Language" id="lang" className=' text-sm border-2 border-zinc-300 border-b-[#3eff4b] px-4 text-black'>
               <option value="lang1">language</option>
               <option value="lang2">lang2</option>
             </select>

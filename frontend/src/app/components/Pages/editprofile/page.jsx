@@ -21,6 +21,7 @@ const EditProfile = () => {
   };
 
   return (
+    <Layout>
     <div className='w-full bg-[#ccffcc] p-2'>
       <div className="bg-[#e5ffe5] md:p-8 p-4 rounded-sm border-box md:w-4/5 w-full m-auto my-4 ">
 
@@ -126,6 +127,7 @@ const EditProfile = () => {
         </form>
       </div>
     </div>
+    </Layout>
   );
 };
 

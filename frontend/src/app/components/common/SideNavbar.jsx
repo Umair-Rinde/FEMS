@@ -36,7 +36,7 @@ export default function SideNavbar() {
               </Link>
 
 
-              <Link href='/components/Pages/cropPlanning'>
+              <Link href='/cropPlanning'>
                 <ul className='nav-text-style' >
                   <span className='nav-icon-style'><BsChat /></span>
                   Crop Planning
@@ -76,7 +76,7 @@ export default function SideNavbar() {
               </Link>
 
 
-              <Link href='/components/Pages/Plots'>
+              <Link href='/Plots'>
                 <ul className='nav-text-style' >
                   <span className='nav-icon-style'><BsChat /></span>
                   Plots

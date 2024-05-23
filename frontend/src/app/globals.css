@@ -44,3 +44,7 @@
 .nav-icon-style{
   @apply text-base font-extrabold pl-4 pr-2;
 }
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}

@@ -7,8 +7,10 @@ import {
   Default,
   Model,
   HasMany,
+  HasOne,
 } from 'sequelize-typescript';
 import { RoleEnum } from '../../interface';
+import { FarmerInfo } from 'src/modules/configurations/farmerInfo/farmerinfo.model';
 
 @Table({
   tableName: 'users',
@@ -96,4 +98,6 @@ export class User extends Model<User> {
   })
   role: string;
   
+  @HasOne(()=>FarmerInfo)
+  farmer:FarmerInfo
 }

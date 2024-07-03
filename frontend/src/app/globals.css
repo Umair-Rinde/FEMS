@@ -52,6 +52,10 @@
 .toastBody {
   @apply text-sm space-x-1 md:m-2;
 }
+/* npm i react-toastify + Adjust react toast font size */
+.toastBody {
+  @apply text-sm space-x-1 md:m-2;
+}
 
 .scroll-hidden::-webkit-scrollbar {
   display: none;

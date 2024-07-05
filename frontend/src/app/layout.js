@@ -1,7 +1,5 @@
 
 import "./globals.css";
-import WebLayout from "@/app/components/weblayout";
-
 
 export const metadata = {
   title: "FEMS",
@@ -12,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <WebLayout children={children} />
+        {children}
       </body>
     </html>
   );

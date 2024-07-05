@@ -1,8 +1,8 @@
-
+import WebLayout from "@/app/components/weblayout";
 
 function Crops() {
   return (
-    <div>
+    <WebLayout>
       <span className='flex gap-2 mt-4 ml-4'>
           <logo className="w-8 h-8 p-1  text-white shadow-sm rounded-[50%] border-2 border-white flex justify-center items-center">
           <img src="https://cdn-icons-png.flaticon.com/512/2826/2826368.png" alt="" />
@@ -93,9 +93,6 @@ function Crops() {
           <p className="font-semibold">150 Rs/kg</p>
 
         </div>
-
-
-
       </section>
 
       <span className='flex gap-2 mt-4 ml-4'>
@@ -187,7 +184,7 @@ function Crops() {
 
         </div>
       </section>
-    </div>
+    </WebLayout>
   )
 }
 

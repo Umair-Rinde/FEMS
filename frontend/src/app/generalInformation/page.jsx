@@ -126,11 +126,8 @@ const GeneralInformation = () => {
           className="bg-black text-white px-4 py-1 ml-2 rounded-sm font-semibold shadow-md">Save</button>
           </Link>
         </form>
-
       </div>
-
     </div>
-
   );
 };
 

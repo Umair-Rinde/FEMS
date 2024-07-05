@@ -5,12 +5,7 @@ import SideNavbar from "./SideNavbar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-import { useUrl } from "nextjs-current-url";
-
 const WebLayout = ({children}) => {
-    const url = useUrl();
-    console.log(url);
-    
     return (
         <div>
             <HeroSection />

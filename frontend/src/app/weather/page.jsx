@@ -1,8 +1,10 @@
 import React from 'react';
 import { BsCloudSun } from 'react-icons/bs';
+import WebLayout from '@/app/components/weblayout';
 
 export default function weather() {
     return (
+        <WebLayout>
         <section className='p-2'>
 
             <div className='w-full grid md:grid-cols-4 grid-cols-1 md:gap-2'>
@@ -222,8 +224,7 @@ export default function weather() {
                 </div>
 
             </div>
-
-
         </section>
+        </WebLayout>
     )
 }

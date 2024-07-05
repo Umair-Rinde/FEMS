@@ -76,7 +76,7 @@ export default function SideNavbar() {
               </Link>
 
 
-              <Link href='/Plots'>
+              <Link href='/plots'>
                 <ul className='nav-text-style' >
                   <span className='nav-icon-style'><BsChat /></span>
                   Plots

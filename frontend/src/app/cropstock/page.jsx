@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { BsClipboard2DataFill, BsDatabaseFillAdd, BsPlusCircleFill } from "react-icons/bs";
 import InputField from "@/app/components/InputField";
+import WebLayout from "@/app/components/weblayout";
 
 const CropStockForm = () => {
     const [cropcode, setCropCode] = useState('');
@@ -32,7 +33,7 @@ const CropStockForm = () => {
     }
 
     return (
-        <div>
+        <WebLayout>
             <div className="w-full h-screen bg-[#ccffcc] p-4  m-auto flex flex-col justify-center items-center">
             
             <form className="flex flex-col w-full gap-2 justify-center p-4 bg-[#e5ffe5]">
@@ -110,7 +111,7 @@ const CropStockForm = () => {
             </form>
 
             </div>
-        </div>
+        </WebLayout>
     )
 }
 

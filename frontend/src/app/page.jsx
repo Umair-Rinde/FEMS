@@ -1,5 +1,5 @@
 import React from 'react';
-import WebLayout from './components/weblayout';
+import WebLayout from './components/WebLayout';
 // import logo from '@/images/logo.png';
 // import Image from 'next/image';
 // import Layout from '../../common/Layout';

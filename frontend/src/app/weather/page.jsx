@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsCloudSun } from 'react-icons/bs';
-import WebLayout from '@/app/components/weblayout';
+import WebLayout from '@/app/components/WebLayout';
 
 export default function weather() {
     return (

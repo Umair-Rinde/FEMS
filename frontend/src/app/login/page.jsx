@@ -8,7 +8,6 @@ import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
 
 const Login = () => {
-
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 

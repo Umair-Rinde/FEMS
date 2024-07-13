@@ -8,9 +8,6 @@ import { CustomeExceptionsFilter } from './core/filters';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-<<<<<<< HEAD
-  await app.listen(4000);
-=======
 
   const config = app.get(ConfigService);
 
@@ -30,14 +27,15 @@ async function bootstrap() {
   app.useGlobalFilters(new CustomeExceptionsFilter());
 
   // set Globle Pipes
-  app.useGlobalPipes(new ValidationPipe({
-    skipMissingProperties:false,
-    skipNullProperties:false,
-    skipUndefinedProperties:false,
-    forbidNonWhitelisted:false,
-    forbidUnknownValues:false,
-  }));
+  app.useGlobalPipes(
+    new ValidationPipe({
+      skipMissingProperties: false,
+      skipNullProperties: false,
+      skipUndefinedProperties: false,
+      forbidNonWhitelisted: false,
+      forbidUnknownValues: false,
+    }),
+  );
   await app.listen(config.get('PORT'));
->>>>>>> c65c611213a3006a7376aa2a615d4dd9e7be182a
 }
 bootstrap();

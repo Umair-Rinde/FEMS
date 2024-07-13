@@ -1,6 +1,20 @@
+'use client';
+
 import WebLayout from "@/app/components/WebLayout";
+import { useEffect } from "react";
 
 function Crops() {
+  const crops = [
+    {
+      name: 'Rice',
+      category: 'Basmati Rice',
+      rate: '150 Rs/Kg'
+    }
+  ]
+
+  useEffect(() => {
+    
+  }, [])
   return (
     <WebLayout>
       <span className='flex gap-2 mt-4 ml-4'>
@@ -181,7 +195,6 @@ function Crops() {
 
           <p className="text-gray-400">Basmati Rice</p>
           <p className="font-semibold">150 Rs/kg</p>
-
         </div>
       </section>
     </WebLayout>

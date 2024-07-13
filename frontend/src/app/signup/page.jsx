@@ -4,7 +4,7 @@ import logo from '@/images/logo.png';
 import Image from 'next/image';
 import { BsGoogle, BsFacebook, BsInstagram, BsTelegram, BsTwitterX } from 'react-icons/bs';
 
-export default function page() {
+export default function SignupPage() {
   const [firstName, setFirstName] = useState('');
   const [middleName, setMiddleName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -217,6 +217,5 @@ export default function page() {
           
       </div>
     </div>
-
   );
 }

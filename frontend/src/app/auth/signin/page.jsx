@@ -16,7 +16,7 @@ const Login = () => {
             <section className="bg-green-2 h-screen w-screen flex items-center justify-center lg:w-1/2 lg:rounded-2xl
                 transtion-all duration-200 ease-linear"
             >
-                <div className="bg-green-1 flex flex-col gap-6 items-center py-7 px-5 rounded-2xl lg:rounded-4xl w-4/5 lg:w-3/5"
+                <div className="bg-green-1 flex flex-col gap-6 items-center py-4 px-5 rounded-2xl lg:rounded-4xl w-4/5 lg:w-3/5"
                     style={{
                         boxShadow: '5px 5px 10px #00000040',
                     }}

@@ -1,7 +1,7 @@
 'use client' 
 import { BsPlusCircleFill, BsPencil } from 'react-icons/bs'
 import { useState } from 'react';
-import WebLayout from '../components/WebLayout';
+import WebLayout from '../../components/WebLayout';
 
 const EditProfile = () => {
   const [username, setUsername] = useState('');

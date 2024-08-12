@@ -1,4 +1,5 @@
 
+import { PageWraper } from "@/app/hoc";
 
 const HomePage = () => {
   return (
@@ -6,4 +7,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage;
+export default PageWraper(HomePage);

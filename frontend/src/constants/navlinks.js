@@ -8,7 +8,11 @@ export const navLinks = [
         path: '/crops',
     },{
         title: 'Crop planning',
-        path: '/crop-planning',
+        options: [
+            { title: 'Planning', path: '/crop-planning/planning' },
+            { title: 'Adjustment', path: '/crop-planning/adjustment' },
+            { title: 'Snowing', path: '/crop-planning/snowing' }
+        ]
     },{
         title: 'Plots',
         path: '/plots',

@@ -1,5 +1,5 @@
 
-import navLinks from './navlinks';
+import { navLinks } from './navlinks';
 
 export {
     navLinks,

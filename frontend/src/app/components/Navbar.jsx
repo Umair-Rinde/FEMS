@@ -9,12 +9,12 @@ import { navLinks } from "@/constants";
 const NavItem = ({title, path, options}) => {
   if(!path){
     return (
-      <div className="relative group text-sm font-semibold">
+      <div className="relative group text-sm font-semibold py-3">
         <button
-          className="w-full h-full px-2 py-1 hover:text-gray-500"
+          className="w-full h-full px-2 hover:text-gray-500"
         >{title}</button>
         <ul className="w-full list-none hidden group-hover:flex hover:flex flex-col 
-          absolute left-0 top-[110%] border rounded-lg bg-white-100 backdrop-blur"
+          absolute left-0 top-[90%] border rounded-lg bg-white-100 backdrop-blur"
         >
           {options.map((option) => (
             <Link href={option.path} className="px-3 py-2 w-fit hover:text-tertiary">
@@ -27,7 +27,7 @@ const NavItem = ({title, path, options}) => {
   }
   
   return (
-    <Link href={path} className="text-sm font-semibold px-2 py-1 hover:text-tertiary">
+    <Link href={path} className="text-sm font-semibold px-2 py-3 hover:text-tertiary">
       {title}
     </Link>
   )
@@ -70,7 +70,7 @@ const Navbar = () => {
   return (
     <nav className="w-full flex justify-center items-center">
       <ul className="hidden md:flex items-center gap-6 justify-center 
-        border-2 my-2 py-2 px-5 rounded-full">
+        border-2 my-2 px-5 rounded-full">
         {navLinks.map((navlink) => (
           <NavItem 
             title={navlink.title} 
@@ -93,7 +93,7 @@ const Navbar = () => {
         </button>
            
         {toggle &&
-          <ul className="flex flex-col absolute right-7 top-12 backdrop-blur-sm border p-2 rounded-lg">
+          <ul className="bg-white-100 flex flex-col absolute z-10 right-7 top-12 backdrop-blur-sm border p-2 rounded-lg">
             {navLinks.map((navlink) => (
               <NavItemMobile 
                 title={navlink.title} 

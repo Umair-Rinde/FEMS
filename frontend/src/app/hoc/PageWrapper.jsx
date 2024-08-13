@@ -7,7 +7,9 @@ const PageWraper = (PageComponent, id = null) =>
       <div className="w-full min-h-screen flex flex-col">
         <Header />
         <Navbar />
-        <PageComponent />
+        <div className="flex items-center justify-center w-full py-10 px-4 md:px-20">
+          <PageComponent />
+        </div>
         <Footer />
       </div>
     );

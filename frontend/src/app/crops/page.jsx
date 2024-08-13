@@ -2,6 +2,7 @@
 import React from 'react';
 
 import { PageWraper } from "@/app/hoc";
+import { yourCrops, relatedCrops } from '@/constants';
 
 const Crops = () => {
   return (

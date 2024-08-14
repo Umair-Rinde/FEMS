@@ -4,10 +4,10 @@ import { useState } from "react";
 import { PageWraper } from "@/app/hoc";
 import { RadioInput, SelectInput, TextInput } from "@/app/components/inputs";
 
-const CropPlanning = () => {
+const CropSnowing = () => {
 	return (
 		<main className="form-container">
-			<h1 className="form-heading">Crop Planning</h1>
+			<h1 className="form-heading">Crop Snowing</h1>
 			<div className="form-grid">
 				<SelectInput 
 					label="Crop Code"
@@ -69,4 +69,4 @@ const CropPlanning = () => {
 	);
 }
 
-export default PageWraper(CropPlanning);
+export default PageWraper(CropSnowing);

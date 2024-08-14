@@ -7,7 +7,7 @@ import { yourCrops, relatedCrops } from '@/constants';
 
 const CropCard = ({index, name, variety, rate, img}) => {
   return (
-    <div className="p-2 md:p-3 bg-primary rounded-xl">
+    <div className="p-2 md:p-3 bg-primary rounded-xl" key={index}>
       <div className="bg-white p-1 w-40 h-28 rounded-lg overflow-hidden">
         <Image 
           alt={name}

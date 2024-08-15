@@ -19,7 +19,7 @@ export const navLinks = [
     },{
         title: 'Crop stocks',
         options: [
-            { title: 'Current', path: '/crop-stocks/current' },
+            { title: 'Current', path: '/crop-stocks' },
             { title: 'Future', path: '/crops-stocks/future' },
         ]
     },{

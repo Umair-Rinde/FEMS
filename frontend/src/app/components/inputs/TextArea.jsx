@@ -1,9 +1,10 @@
 
-const TextInput = ({label, placeholder=" - - - ", value, onChange, type="text"}) => {
+
+const TextArea = ({label, placeholder="enter short description of this watersource", value, onChange, type="text"}) => {
 	return (
 		<div className="flex flex-col gap-2">
 			<label className="font-semibold ml-1 text-sm">{label}</label>
-			<input 
+			<textarea
 				value={value}
 				onChange={onChange}
 				placeholder={placeholder}
@@ -14,4 +15,4 @@ const TextInput = ({label, placeholder=" - - - ", value, onChange, type="text"})
 	)
 }
 
-export default TextInput;
+export default TextArea;

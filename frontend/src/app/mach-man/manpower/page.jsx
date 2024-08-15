@@ -4,43 +4,36 @@ import { useState } from "react";
 import { PageWraper } from "@/app/hoc";
 import { SelectInput, TextInput } from "@/app/components/inputs";
 
-const Plots = () => {
+const ManPower = () => {
 	return (
 		<main className="form-container">
 			<h1 className="form-heading">Plots</h1>
 			<div className="form-grid">
 				<TextInput 
-					label="Plot number"
+					label="Person ID"
 					onChange={() => {}}
 					placeholder="0000000"
 					type="number"
 				/>
 				<TextInput 
-					label="Plot Name"
+					label="Description"
 					onChange={() => {}}
 					placeholder="enter plot name"
 				/>
         <TextInput 
-					label="Plot size"
+					label="Ph. Numbers"
 					onChange={() => {}}
 					placeholder="0"
 					type="number"
 				/>
         <TextInput 
-					label="Plot Gat No."
-					onChange={() => {}}
-					placeholder="0000000"
-					type="number"
-				/>
-        <SelectInput
-					label="Soil type"
-					options={["type-01", "type-02", "type-03"]}
+					label="Name"
 					onChange={() => {}}
 				/>
         <TextInput 
-					label="Ownership"
+					label="Person position"
 					onChange={() => {}}
-					placeholder=""
+					placeholder="worker / manager"
 				/>
 			</div>
 
@@ -52,4 +45,4 @@ const Plots = () => {
 	);
 }
 
-export default PageWraper(Plots);
+export default PageWraper(ManPower);

@@ -1,27 +1,29 @@
+
 "use client";
 import { useState } from "react";
 
 import { PageWraper } from "@/app/hoc";
 import { SelectInput, TextArea, TextInput } from "@/app/components/inputs";
 
-const WaterResources = () => {
+const Machinery = () => {
 	return (
 		<main className="form-container">
-			<h1 className="form-heading">Water resources</h1>
+			<h1 className="form-heading">Machinery</h1>
 			<div className="flex flex-col gap-5">
 				<TextInput 
-					label="Water resource ID or name"
+					label="Machine ID"
 					onChange={() => {}}
 				/>
 				<TextArea 
           label="Description"
           onChange={() => {}}
         />
-        <SelectInput 
-          label="Choose resource type"
-          options={["Surface Water (rivers, lakes, etc.)", "Ground Water (wells)", "Rain Water", "Recycled Water"]}
-
-        />
+        <TextInput
+					label="Total number"
+					onChange={() => {}}
+					placeholder="0"
+					type="number"
+				/>
 			</div>
 
 			<div className="form-btns-container">
@@ -32,4 +34,4 @@ const WaterResources = () => {
 	);
 }
 
-export default PageWraper(WaterResources);
+export default PageWraper(Machinery);

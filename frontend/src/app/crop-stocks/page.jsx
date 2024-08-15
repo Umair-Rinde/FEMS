@@ -2,12 +2,12 @@
 import { useState } from "react";
 
 import { PageWraper } from "@/app/hoc";
-import { SelectInput, TextInput } from "@/app/components/inputs";
+import { RadioInput, SelectInput, TextInput } from "@/app/components/inputs";
 
-const FutureCropStocks = () => {
+const CurrentCropStocks = () => {
 	return (
 		<main className="form-container">
-			<h1 className="form-heading">Future stock</h1>
+			<h1 className="form-heading">Current stock</h1>
 			<div className="form-grid">
 				<SelectInput 
 					label="Crop Code"
@@ -55,4 +55,4 @@ const FutureCropStocks = () => {
 	);
 }
 
-export default PageWraper(FutureCropStocks);
+export default PageWraper(CurrentCropStocks);

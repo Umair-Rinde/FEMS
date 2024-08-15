@@ -1,16 +1,21 @@
 'use client' 
-import { BsPlusCircleFill, BsPencil } from 'react-icons/bs'
+import { BsPencil, BsPlusCircle } from 'react-icons/bs'
 import { useState } from 'react';
-import WebLayout from '../components/WebLayout';
+import Image from 'next/image';
+
+import { PageWraper } from '@/app/hoc';
+import { sample_profile_img } from '@/images';
+import { myprofile } from '@/constants';
+import { TextArea, TextInput } from "@/app/components/inputs";
 
 const EditProfile = () => {
-  const [username, setUsername] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [email, setEmail] = useState('');
-  const [district, setDistrict] = useState('');
-  const [region, setRegion] = useState('');
-  const [cropsInfo, setCropsInfo] = useState(['']);
-  const [bio, setBio] = useState('');
+  const [username, setUsername] = useState(myprofile.username);
+  const [phoneNumber, setPhoneNumber] = useState(myprofile.phoneNumber);
+  const [email, setEmail] = useState(myprofile.email);
+  const [district, setDistrict] = useState(myprofile.district);
+  const [region, setRegion] = useState(myprofile.region);
+  const [cropsInfo, setCropsInfo] = useState(myprofile.cropsInfo);
+  const [bio, setBio] = useState(myprofile.bio);
 
   const handleSaveChanges = () => {
     alert('Changes saved!');
@@ -20,115 +25,92 @@ const EditProfile = () => {
     setCropsInfo([...cropsInfo, '']);
   };
 
+  const handleCropInfoChange = (e,index) => {
+    const updatedCropsInfo = [...cropsInfo];
+    updatedCropsInfo[index] = e.target.value;
+    setCropsInfo(updatedCropsInfo);
+  }
+
   return (
-    <WebLayout>
-    <div className='w-full bg-[#ccffcc] p-2'>
-      <div className="bg-[#e5ffe5] md:p-8 p-4 rounded-sm border-box md:w-4/5 w-full m-auto my-4 ">
-
-        <span className='flex gap-2 '>
-          <logo className="w-8 h-8 p-1 bg-[#34ff34] text-white shadow-sm rounded-[50%] border-2 border-white flex justify-center items-center">
-          <BsPencil className="w-fit" />
-          </logo>
-          <h1 className="text-2xl font-bold mb-4">Edit Profile</h1>
-        </span>
-        <hr className='border-1 border-[#34ff34] my-2' />
-        <div className='flex p-2 mb-4 bg-black text-white rounded-sm shadow-sm'>
-          <img src="https://th.bing.com/th/id/OIP.MCmM1b-hj0SntnEkvZNAnwAAAA?rs=1&pid=ImgDetMain" className="w-10 h-10 bg-white rounded-3xl mr-2" />
-          <div>
-            <p className='text-sm font-semibold'>Oscar</p>
-            <p className='text-sm'>email@figmasfakedomain.net</p>
-          </div>
+    <main className="form-container">
+      <h1 className="form-heading">
+        <BsPencil />
+        Edit profile
+      </h1>
+      <section className="flex items-center gap-5 p-4">
+        <Image 
+          src={sample_profile_img}
+          className="w-20 h-20 rounded-full object-contain"
+        />
+        <div className="flex flex-col gap-1">
+          <h2 className="text-lg font-bold">{username}</h2>
+          <button className="font-semibold text-gray-700">Change profile photo</button>
         </div>
+      </section>
 
-
-        <form className='text-sm'>
-          <label className="block my-2 font-semibold">Username:</label>
-          <input
-            type="text"
-            value={username}
-            placeholder='Enter Username'
-            onChange={(e) => setUsername(e.target.value)}
-            className="w-full p-2 border rounded-sm"
-          />
-
-          <label className="block my-2 font-semibold">Phone Number:</label>
-          <input
-            type="text"
-            value={phoneNumber}
-            placeholder='Enter Your Phone no'
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            className="w-full p-2 border rounded-sm"
-          />
-
-          <label className="block my-2 font-semibold">Email:</label>
-          <input
-            type="email"
-            value={email}
-            placeholder='Enter Your Email Address'
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border rounded-sm"
-          />
-
-          <label className="block my-2 font-semibold">District:</label>
-          <input
-            type="text"
-            value={district}
-            placeholder='Enter Your District'
-            onChange={(e) => setDistrict(e.target.value)}
-            className="w-full p-2 border rounded-sm"
-          />
-
-          <label className="block my-2 font-semibold">Region:</label>
-          <input
-            type="text"
-            value={region}
-            placeholder='Enter Region'
-            onChange={(e) => setRegion(e.target.value)}
-            className="w-full p-2 border rounded-sm"
-          />
-
-          <h2 className="font-semibold mt-4 my-2">Crops Information</h2>
-          {cropsInfo.map((crop, index) => (
-            <input
-              key={index}
-              type="text"
-              value={crop}
-              placeholder='Add Crops '
-              onChange={(e) => {
-                const updatedCropsInfo = [...cropsInfo];
-                updatedCropsInfo[index] = e.target.value;
-                setCropsInfo(updatedCropsInfo);
-              }}
-              className="w-full p-2 border rounded-sm my-2"
+      <section className="flex flex-col gap-7">
+        <TextInput 
+          label="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="e.g. @ramnaresh12"
+        />
+        <TextInput 
+          label="Phone number"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          type="number"
+          placeholder="+AB XXXXXXXXXX"
+        />
+        <TextInput 
+          label="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder="e.g. abc@xyz.com"
+        />
+        <TextInput 
+          label="District"
+          value={district}
+          onChange={(e) => setDistrict(e.target.value)}
+          placeholder="e.g. dhule (maharashtra)"
+        />
+        <TextInput 
+          label="Region"
+          value={region}
+          onChange={(e) => setRegion(e.target.value)}
+          placeholder="e.g. vidarbha (maharashtra)"
+        />
+        <div className="w-full flex flex-col">
+          <label className="text-sm font-semibold pl-1">Crops</label>
+          {cropsInfo.map((crop,index) => (
+            <TextInput 
+              value={crop} 
+              onChange={(e) => handleCropInfoChange(e, index)}
             />
           ))}
-          <button
-            type="button"
+          <button className="flex flex-start items-center gap-2 p-2"
             onClick={handleAddCrop}
-            className="text-[#278625] font-medium rounded-sm hover:underline flex justify-center items-center gap-2 px-2 my-2"
           >
-            <BsPlusCircleFill /> Add More Crops
+            <BsPlusCircle />
+            <span className="hover:underline hover:font-semibold">Add crop info</span>
           </button>
-
-          <label className="block mt-4 my-2">Bio (optional):</label>
-          <textarea
-            value={bio}
-            onChange={(e) => setBio(e.target.value)}
-            className="w-full p-2 border rounded-sm"
-          />
-
-          <button
-            type="button"
-            onClick={handleSaveChanges}
-            className="bg-black text-white px-4 py-1 rounded-sm mt-4 font-semibold shadow-md"
-          >
-            Save Changes
-          </button>
-        </form>
-      </div>
-    </div>
-    </WebLayout>
+        </div>
+        <TextArea 
+          label="Bio"
+          value={bio}
+          onChange={(e) => setBio(e.target.value)}
+          placeholder="I am a farmer from ... region, and ..."
+        />
+      </section>
+      <button 
+        onClick={handleSaveChanges}
+        className="py-2 px-4 rounded font-semibold text-white bg-black hover:bg-gray-700 w-fit "
+      >
+        Save Changes
+      </button>
+    </main>
   );
 };
 
-export default EditProfile;
+export default PageWraper(EditProfile);

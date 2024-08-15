@@ -44,7 +44,7 @@
 }
 
 .form-heading {
-  @apply  w-full text-xl md:text-2xl font-semibold border-b-2 border-black py-2;
+  @apply  w-full text-xl md:text-2xl font-semibold border-b-2 border-black py-2 flex gap-5 items-center;
 }
 
 .form-grid {

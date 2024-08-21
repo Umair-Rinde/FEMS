@@ -10,8 +10,12 @@ import { useRouter } from "next/navigation";
 
 
 const Login = () => {
+<<<<<<< HEAD
+    const [username, setUsername] = useState('');
+=======
 
     const [email, setemail] = useState('');
+>>>>>>> f84f51d4e8ef000d495719ff91d6d5769e5781ed
     const [password, setPassword] = useState('');
     const router = useRouter();
 

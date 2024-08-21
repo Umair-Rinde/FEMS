@@ -1,6 +1,5 @@
 
-import { PageWraper } from "@/app/hoc";
-
+import { PageWraper } from '../app/hoc' 
 const HomePage = () => {
   return (
     <div>Homepage</div>

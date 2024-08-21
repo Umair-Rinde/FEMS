@@ -1,6 +1,6 @@
 'use client';
 
-import logoImg from '@/images/logo.png';
+import logoImg from '../../images/logo.png';
 import Image from 'next/image';
 import { useState } from 'react';
 import { CiUser, CiLock} from 'react-icons/ci';

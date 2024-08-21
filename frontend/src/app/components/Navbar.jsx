@@ -4,7 +4,7 @@ import { useState } from "react";
 import { RiMenu3Line } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
 
-import { navLinks } from "@/constants";
+import { navLinks } from "../../constants";
 
 const NavItem = ({title, path, options}) => {
   if(!path){

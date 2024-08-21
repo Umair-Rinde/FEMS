@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { BsSearch } from "react-icons/bs";
 
-import { fems_logo } from "@/images";
+import { fems_logo } from "../../images";
 import { styles } from "../../styles";
 
 const Header = () => {

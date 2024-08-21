@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import { not_found_img } from "@/images";
+import { not_found_img } from "../images";
 import { MdRefresh } from "react-icons/md";
 
 const NotFound = () => {

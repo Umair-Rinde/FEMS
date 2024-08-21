@@ -1,6 +1,6 @@
 "use client"
 import { useState } from 'react';
-import logo from '@/images/logo.png';
+import logo from '../../images/logo.png';
 import Image from 'next/image';
 import { BsGoogle, BsFacebook, BsInstagram, BsTelegram, BsTwitterX } from 'react-icons/bs';
 import Link from 'next/link';

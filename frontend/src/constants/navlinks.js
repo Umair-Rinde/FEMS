@@ -29,13 +29,13 @@ export const navLinks = [
         title: 'Machinery & Manpower',
         options: [
             { title: 'Machinery', path: '/mach-man/machinery' },
-            { title: 'Manpower', path: '/mach-man/manpower'},
+            // { title: 'Manpower', path: '/mach-man/manpower'},
         ]
-    },{
-        title: 'Reports',
-        path: '/reports',
-    },{
-        title: 'Sales & Purchase',
-        path: '/sales-purchase'
-    },
+    },//{
+    //     title: 'Reports',
+    //     path: '/reports',
+    // },{
+    //     title: 'Sales & Purchase',
+    //     path: '/sales-purchase'
+    // },
 ];

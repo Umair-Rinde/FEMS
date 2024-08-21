@@ -1,7 +1,6 @@
 "use client";
-import { useState } from "react";
 
-import { PageWraper } from "../app/hoc";
+import { PageWraper } from "../../hoc";
 import { SelectInput, TextInput } from "../../components/inputs";
 
 const FutureCropStocks = () => {

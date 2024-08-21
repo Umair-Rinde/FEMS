@@ -3,10 +3,10 @@ import { BsPencil, BsPlusCircle } from 'react-icons/bs'
 import { useState } from 'react';
 import Image from 'next/image';
 
-import { PageWraper } from '../app/hoc';
+import { PageWraper } from '../hoc';
 import { sample_profile_img } from '../../images';
-import { myprofile } from '@/constants';
-import { TextArea, TextInput } from "../../components/inputs";
+import { myprofile } from '../../constants';
+import { TextArea, TextInput } from "../components/inputs";
 
 const EditProfile = () => {
   const [username, setUsername] = useState(myprofile.username);

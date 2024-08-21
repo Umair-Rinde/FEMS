@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import notFoundImg from "../images/not-found.jpg";
+import { not_found_img } from "@/images";
 import { MdRefresh } from "react-icons/md";
 
 const NotFound = () => {
@@ -13,7 +13,7 @@ const NotFound = () => {
         <main className="w-screen h-screen flex flex-col items-center justify-center gap-10">
             <div className="h-1/2">
                 <Image 
-                    src={notFoundImg}
+                    src={not_found_img}
                     className="h-full w-auto"
                 />
             </div>

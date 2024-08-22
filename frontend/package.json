@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.14",
     "frontend": "file:",
-    "next": "14.1.4",
+    "next": "^14.1.4",
     "nextjs-current-url": "^1.0.3",
     "react": "^18",
     "react-dom": "^18",

@@ -3,7 +3,7 @@ import { PageWraper } from "@/app/hoc";
 
 const HomePage = () => {
   return (
-    <div>Homepage</div>
+    <div className="h-screen">Homepage</div>
   )
 }
 

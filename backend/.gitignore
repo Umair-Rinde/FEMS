@@ -1,39 +1,16 @@
-# compiled output
-/dist
-/node_modules
-src/public/media
+/bin
+/lib
+*.pyc
+__pycache__
 .env
 
-# Logs
-logs
-*.log
-npm-debug.log*
-pnpm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# OS
-.DS_Store
-
-# Tests
-/coverage
-/.nyc_output
-
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-
+# Ignore all migration files except __init__.py inside any migrations folder
+**/migrations/*.py
+**/migrations/*.pyc
+**/migrations/__pycache__/
+!**/migrations/__init__.py
+/ezyEv/db.sqlite3
+# ezyEv\ezyev\db.sqlite3 # relative path
+/db.sqlite3
 .env
+/env

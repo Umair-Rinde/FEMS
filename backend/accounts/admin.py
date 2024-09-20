@@ -31,23 +31,6 @@ class MyUserAdmin(BaseUserAdmin):
     ordering = ('phone', 'email', )
     filter_horizontal = ()
 
-class PrincipleForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super(PrincipleForm, self).__init__(*args, **kwargs)
-        self.fields['principle'].queryset = User.objects.filter(user_type='principal')
-
-    class Meta:
-        model = PrincipleSchool
-        fields = ('principle','school')
-
-class PrincipleAdmin(admin.ModelAdmin):
-    list_display =['principle','school']
-    form = PrincipleForm
-    
-    def get_queryset(self, request):
-        qs = super().get_queryset(request)
-        return qs.filter(principle__user_type='principal')
     
 admin.site.register(User, MyUserAdmin)
 admin.site.unregister(Group)
-admin.site.register(PrincipleSchool, PrincipleAdmin)

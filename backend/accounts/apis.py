@@ -7,15 +7,11 @@ from django.utils import timezone
 from services.email import EmailService
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import AllowAny
 from django.core.exceptions import ValidationError
-from .authentication import CsrfExemptSessionAuthentication
 from accounts.models import User
 from accounts.serializers import (
-    UserGetSerializer,
     UserRegisterSerailizer,
 )
-from services.email import EmailService
 from services.otpservice import send_otp, otp_verify, resend_otp
 from services.kycverification import verify_aadhaar, aadhaar_otp_generate
 
@@ -87,17 +83,3 @@ class UserRegistrationAPI(APIView):
             # data['otp'] = otp
             return Response(data, status=201)
         return Response(serializer.errors, status=400)
-
-
-class Aadhaar_otp_and_verificationAPI(APIView):
-    def post(self, request, *args, **kwargs):
-        data = request.data
-        if data.get("otp") and data.get("ref_id"):
-            response = verify_aadhaar(data.get("otp"), data.get("ref_id"))
-            return Response(response)
-
-        if data.get("aadhaar_number"):
-            response = aadhaar_otp_generate(data.get("aadhaar_number"))
-            print("in api ???????????????????????????", response)
-            return Response(response)
-

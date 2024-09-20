@@ -3,9 +3,6 @@ from django.db import models
 from .managers import MyUserManager
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import AbstractBaseUser 
-from portal.base import BaseModel
-from django.contrib.auth.models import User
-from schools.models import Schools
 
 class MyUser(AbstractBaseUser):
     email                   = models.EmailField(max_length=255, unique=True)
@@ -52,12 +49,12 @@ class User(AbstractBaseUser):
         return self.username
     
     def save(self, *args, **kwargs):
-        # if not self.username:
-        #     user = User.objects.all().order_by('-registered_on')[:1].only('username')
-        #     if user.exists():
-        #         self.username = "USR{0:0=4d}".format(int(user.first().username[3:]) + 1)
-        #     else:
-        #         self.username = "USR0001" 
+        if not self.username:
+            user = User.objects.all().order_by('-registered_on')[:1].only('username')
+            if user.exists():
+                self.username = "USR{0:0=4d}".format(int(user.first().username[3:]) + 1)
+            else:
+                self.username = "USR0001" 
         return super().save(*args, **kwargs)
     
     def has_perm(self, perm, obj=None):
@@ -72,11 +69,3 @@ class User(AbstractBaseUser):
     def is_staff(self):
         "Is the user a member of staff?"
         return self.is_admin
-
-
-class PrincipleSchool(BaseModel):
-    principle= models.ForeignKey(User,on_delete=models.CASCADE)
-    school = models.ForeignKey(Schools,on_delete=models.CASCADE)
-
-
-

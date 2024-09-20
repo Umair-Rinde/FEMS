@@ -1,6 +1,6 @@
 
 from rest_framework import serializers
-from .models import User,PrincipleSchool
+from .models import User
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -17,11 +17,6 @@ class UserGetSerializer(serializers.ModelSerializer):
         model = User
         fields = ('id', 'username', 'email', 'full_name', 'phone', 'user_type','gender','is_active' )
         
-class PrinciplePostSerializer(serializers.ModelSerializer):
-    class Meta:
-        model=  PrincipleSchool
-        fields= '__all__'
-
 class UserRegisterSerailizer(serializers.ModelSerializer):
     password2 = serializers.CharField(style={"input_type": "password"}, write_only=True)
 

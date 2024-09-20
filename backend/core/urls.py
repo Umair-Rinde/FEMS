@@ -11,7 +11,6 @@ urlpatterns = [
     path('api/open-empty-slot/', openEmptySlot),
 
     path('api/accounts/', include('accounts.urls')),
-    path('api/category/', include('category.urls')),
 ]
 
 

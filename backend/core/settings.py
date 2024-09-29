@@ -38,6 +38,8 @@ INSTALLED_APPS = [
 
     'accounts',
     'portal',
+    'Plot',
+    'Crop'
 ]
 
 MIDDLEWARE = [
@@ -148,11 +150,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # CORS_ALLOW_ALL_ORIGINS = True
 
-# EMAIL_HOST_USER = env("EMAIL_HOST_USER")
-# EMAIL_HOST_NAME = env("EMAIL_HOST_NAME")
-# EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-# EMAIL_HOST = env("EMAIL_HOST")
-# EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_NAME = env("EMAIL_HOST_NAME")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_USE_TLS=True

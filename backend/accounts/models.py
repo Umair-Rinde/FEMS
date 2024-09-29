@@ -4,19 +4,6 @@ from .managers import MyUserManager
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import AbstractBaseUser 
 
-class MyUser(AbstractBaseUser):
-    email                   = models.EmailField(max_length=255, unique=True)
-    is_active               = models.BooleanField(default=True)
-    is_admin                = models.BooleanField(default=False)
-    in_assets               = models.BooleanField(default=False)
-    objects                 = MyUserManager()
-
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
-
-    def __str__(self):
-        return self.email
-
 class User(AbstractBaseUser):
     id        = models.UUIDField(primary_key=True, default=uuid4)
     username = models.CharField(max_length=128, unique=True, blank=True)
@@ -29,8 +16,8 @@ class User(AbstractBaseUser):
             )]
         )   
     ROLES = (
-        ('principal', 'Principal'),
-        ('hq', 'Headquarters'),
+        ('FARMERS', 'FARMERS'),
+        ('SUPPLIER', 'SUPPLIER'),
     )
     full_name = models.CharField(max_length=128)
     user_type = models.CharField(max_length=10, default='ADMIN', choices=ROLES)
@@ -52,9 +39,9 @@ class User(AbstractBaseUser):
         if not self.username:
             user = User.objects.all().order_by('-registered_on')[:1].only('username')
             if user.exists():
-                self.username = "USR{0:0=4d}".format(int(user.first().username[3:]) + 1)
+                self.username = self.email
             else:
-                self.username = "USR0001" 
+                self.username = "Random" 
         return super().save(*args, **kwargs)
     
     def has_perm(self, perm, obj=None):
@@ -69,3 +56,4 @@ class User(AbstractBaseUser):
     def is_staff(self):
         "Is the user a member of staff?"
         return self.is_admin
+

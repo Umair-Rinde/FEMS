@@ -13,16 +13,15 @@ from accounts.serializers import (
     UserRegisterSerailizer,
 )
 from services.otpservice import send_otp, otp_verify, resend_otp
-from services.kycverification import verify_aadhaar, aadhaar_otp_generate
 
 
 class LoginAPI(APIView):
     def post(self, request, *args, **kwargs):
         try:
             user: User = User.objects.get(
-                username=request.data.get("username"), is_active=True
+                email=request.data.get("email"), is_active=True
             )
-
+            
         except (User.DoesNotExist, ValidationError) as e:
             print("Usr NOT FOUND", e)
             return Response({"msg": "Invalid Credentials"}, status=403)
@@ -67,19 +66,19 @@ class UserRegistrationAPI(APIView):
             user.is_active = False
             user.save()
 
-            # otp = random.randint(100000, 999999)
+            otp = random.randint(100000, 999999)
             # send mail with otp
             # subject, body, to
-            # print(otp , user.username)
+            print(otp , user.username)
             send_otp(user.phone, {})
-            # EmailService(
-            #     f"""Confirm Your Registration with One-Time Password (OTP) """,
-            #     f"""Dear {user.username},\n\nThank you for registering with Ezy Ev! To complete your registration, please use the following One-Time Password (OTP):  {otp}.\n\nPlease do not share this code with anyone.\n\nIf you did not request this registration, please ignore this email.\n\n Thank you,\n [ EZY EV ]""",
-            #     [user.email, ],
-            #     [],
-            # ).send()
+            EmailService(
+                f"""Confirm Your Registration with One-Time Password (OTP) """,
+                f"""Dear {user.username},\n\nThank you for registering with Dr. Babasaheb Ambedkar Technological University! To complete your registration, please use the following One-Time Password (OTP):  {otp}.\n\nPlease do not share this code with anyone.\n\nIf you did not request this registration, please ignore this email.\n\n Thank you,\n [ Dr. Babasaheb Ambedkar Technological University ]""",
+                [user.email, ],
+                [],
+            ).send()
 
             data = serializer.data
-            # data['otp'] = otp
+            data['otp'] = otp
             return Response(data, status=201)
         return Response(serializer.errors, status=400)

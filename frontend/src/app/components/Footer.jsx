@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { fems_logo } from "@/images";
+import { fems_logo } from "../../images";
 import { BsFacebook, BsLinkedin, BsYoutube, BsInstagram } from "react-icons/bs";
 
 const Footer = () => {

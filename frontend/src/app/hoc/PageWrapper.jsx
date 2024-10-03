@@ -1,5 +1,5 @@
 
-import { Navbar, Footer, Header } from "@/app/components";
+import { Navbar, Footer, Header } from "../components";
 
 const PageWraper = (PageComponent, id = null) =>
   function Page() {

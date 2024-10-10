@@ -13,10 +13,10 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.14",
     "frontend": "file:",
-    "next": "14.1.4",
+    "next": "^14.2.15",
     "nextjs-current-url": "^1.0.3",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.0.1",
     "react-toastify": "^10.0.5"
   },

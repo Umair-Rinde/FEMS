@@ -32,6 +32,18 @@ const Plots = () => {
 					placeholder="0000000"
 					type="number"
 				/>
+				<TextInput
+					label="Longitude"
+					onChange={() => {}}
+					placeholder={`00'00"`}
+					type="text"
+				/>
+				<TextInput
+					label="Lattitude"
+					onChange={() => {}}
+					placeholder={`00'00"`}
+					type="text"
+				/>
         <SelectInput
 					label="Soil type"
 					options={["type-01", "type-02", "type-03"]}

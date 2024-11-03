@@ -107,3 +107,6 @@ class UserRegistrationAPI(APIView):
             # data['otp'] = otp
             return Response(data, status=201)
         return Response(serializer.errors, status=400)
+    
+
+

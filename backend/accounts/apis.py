@@ -14,21 +14,46 @@ from accounts.serializers import (
 )
 from services.otpservice import send_otp, otp_verify, resend_otp
 
+SECRET_KEY = settings.SECRET_KEY
+class LoginApiView(APIView):
+    def post(self, request):
+        
+     
+        email   = request.data.get('email')
+        print("-----email",email)
 
-class LoginAPI(APIView):
-    def post(self, request, *args, **kwargs):
+        password = request.data.get('password')
+        print("-----password",password)
+    
+        
         try:
-            user: User = User.objects.get(
-                email=request.data.get("email"), is_active=True
+            user = User.objects.get(email=email)
+           
+        except User.DoesNotExist:
+            return Response(
+                {
+                    'message': 'Invalid credentials'
+                },
+                status=400
             )
-            
-        except (User.DoesNotExist, ValidationError) as e:
-            print("Usr NOT FOUND", e)
-            return Response({"msg": "Invalid Credentials"}, status=403)
-        if not user.check_password(request.data.get("password")):
-            print("LINE 22 INVALID CREDS")
-            return Response({"msg": "Invalid Credentials"}, status=403)
-       
+        
+        payload = {
+            'user_id': str(user.id),
+        }
+        token = jwt.encode(payload, SECRET_KEY, algorithm='HS256')  
+        
+        return Response(
+            { 'full_name':str(user),
+                'username': user.username,
+                "user_id":user.id,
+                'user_type':user.user_type,
+                'phone':user.phone,
+                'email': user.email,
+                'token': token,
+                
+            }
+        )
+    
 
 class UserOtpVerificationAPI(APIView):
     def post(self, request, *args, **kwargs):

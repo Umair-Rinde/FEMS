@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from .models import WaterResource
+from .serializers import WaterResourceGETSerializer, WaterResourcePOSTSerializer
+from portal.base import BaseAPIView 
 
-# Create your views here.
+class WaterResourceAPIView(BaseAPIView):
+    model = WaterResource
+    serializer_get_class = WaterResourceGETSerializer
+    serializer_post_class = WaterResourcePOSTSerializer

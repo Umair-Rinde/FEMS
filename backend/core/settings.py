@@ -38,8 +38,8 @@ INSTALLED_APPS = [
 
     'accounts',
     'portal',
-    'Plot',
-    'Crop'
+    'plot',
+    'crop'
 ]
 
 MIDDLEWARE = [

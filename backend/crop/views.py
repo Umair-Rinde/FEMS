@@ -12,9 +12,10 @@ from portal.base import BaseAPIView
 
 class CropAPIView(BaseAPIView):
     model = Crop
+    lookup='id'
+
     serializer_class = CropGETSerializer
-    # post_serializer = CropPOSTSerializer
-    allowed_methods = ['GET', 'POST']
+    post_serializer = CropPOSTSerializer
 
 
 class FertilizerAPIView(BaseAPIView):

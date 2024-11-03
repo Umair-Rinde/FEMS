@@ -11,7 +11,8 @@ urlpatterns = [
     path('api/open-empty-slot/', openEmptySlot),
 
     path('api/accounts/', include('accounts.urls')),
-    path('api/crop')
+    path('api/crop',include('crop.urls')),
+    path('api/plot',include('plot.urls')),
 ]
 
 

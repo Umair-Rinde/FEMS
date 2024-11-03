@@ -1,10 +1,9 @@
 from django.db import models
 from accounts.models import User
 import uuid
+from portal.base import BaseModel
 
-
-class Crop(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class Crop(BaseModel):
     name = models.CharField(max_length=128)
     variety = models.CharField(max_length=128, blank=True)
     season = models.CharField(max_length=50) 
@@ -13,8 +12,7 @@ class Crop(models.Model):
         return f'{self.name} ({self.variety})'
 
 
-class Fertilizer(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class Fertilizer(BaseModel):
     name = models.CharField(max_length=128)
     type = models.CharField(
         max_length=50, 
@@ -27,8 +25,7 @@ class Fertilizer(models.Model):
     def __str__(self):
         return f'{self.name} ({self.type}) - {self.quantity} kg'
 
-class Plot(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class Plot(BaseModel):
     name = models.CharField(max_length=128)
     area = models.FloatField(help_text="Area in acres or hectares")
     soil_type = models.CharField(max_length=50, blank=True)  # e.g., 'Clay', 'Sandy', etc.
@@ -36,7 +33,7 @@ class Plot(models.Model):
     def __str__(self):
         return f'{self.name} ({self.area} acres)'
     
-class CropPlot(models.Model):
+class CropPlot(BaseModel):
     crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
     plot = models.ForeignKey(Plot, on_delete=models.CASCADE)
 
@@ -46,7 +43,7 @@ class CropPlot(models.Model):
     def __str__(self):
         return f'{self.crop.name} on {self.plot.name}'
     
-class CropFertilizer(models.Model):
+class CropFertilizer(BaseModel):
     crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
     fertilizer = models.ForeignKey(Fertilizer, on_delete=models.CASCADE)
     application_rate = models.FloatField(help_text="Rate of application in kg/acre")  # Optional additional field
@@ -58,8 +55,7 @@ class CropFertilizer(models.Model):
         return f'{self.fertilizer.name} used for {self.crop.name}'
     
 
-class Farmer(models.Model):
-    id = models.UUIDField(primary_key=True,default=uuid.uuid4, editable=False)
+class Farmer(BaseModel):
     user = models.OneToOneField(User, on_delete=models.CASCADE)  
     crops = models.ManyToManyField(Crop, related_name='farmers')  
 

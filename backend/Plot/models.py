@@ -2,11 +2,10 @@ from django.db import models
 from accounts.models import User
 from Crop.models import Crop
 import uuid
-
+from portal.base import BaseModel
 
     
-class WaterResource(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+class WaterResource(BaseModel):
     name = models.CharField(max_length=128)
     resource_type = models.CharField(
         max_length=50, 

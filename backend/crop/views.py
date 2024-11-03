@@ -12,40 +12,40 @@ from portal.base import BaseAPIView
 
 class CropAPIView(BaseAPIView):
     model = Crop
-    serializer_get_class = CropGETSerializer
-    serializer_post_class = CropPOSTSerializer
+    serializer_class = CropGETSerializer
+    # post_serializer = CropPOSTSerializer
     allowed_methods = ['GET', 'POST']
 
 
 class FertilizerAPIView(BaseAPIView):
     model = Fertilizer
-    serializer_get_class = FertilizerGETSerializer
-    serializer_post_class = FertilizerPOSTSerializer
+    serializer_class = FertilizerGETSerializer
+    post_serializer = FertilizerPOSTSerializer
     allowed_methods = ['GET', 'POST']
 
 class PlotAPIView(BaseAPIView):
     model = Plot
-    serializer_get_class = PlotGETSerializer
-    serializer_post_class = PlotPOSTSerializer
+    serializer_class = PlotGETSerializer
+    post_serializer = PlotPOSTSerializer
     allowed_methods = ['GET', 'POST']
 
 
 class CropPlotAPIView(BaseAPIView):
     model = CropPlot
-    serializer_get_class = CropPlotGETSerializer
-    serializer_post_class = CropPlotPOSTSerializer
+    serializer_class = CropPlotGETSerializer
+    post_serializer = CropPlotPOSTSerializer
     allowed_methods = ['GET', 'POST']
 
 
 class CropFertilizerAPIView(BaseAPIView):
     model = CropFertilizer
-    serializer_get_class = CropFertilizerGETSerializer
-    serializer_post_class = CropFertilizerPOSTSerializer
+    serializer_class = CropFertilizerGETSerializer
+    post_serializer = CropFertilizerPOSTSerializer
     allowed_methods = ['GET', 'POST']
 
 
 class FarmerAPIView(BaseAPIView):
     model = Farmer
-    serializer_get_class = FarmerGETSerializer
-    serializer_post_class = FarmerPOSTSerializer
+    serializer_class = FarmerGETSerializer
+    post_serializer = FarmerPOSTSerializer
     allowed_methods = ['GET', 'POST']

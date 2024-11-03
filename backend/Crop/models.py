@@ -29,9 +29,14 @@ class Plot(BaseModel):
     name = models.CharField(max_length=128)
     area = models.FloatField(help_text="Area in acres or hectares")
     soil_type = models.CharField(max_length=50, blank=True)  # e.g., 'Clay', 'Sandy', etc.
+    survey_number = models.CharField(max_length=128, blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
+    altitude = models.FloatField(blank=True, null=True)
     farmer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='plots')
+
     def __str__(self):
         return f'{self.name} ({self.area} acres)'
+
     
 class CropPlot(BaseModel):
     crop = models.ForeignKey(Crop, on_delete=models.CASCADE)

@@ -64,7 +64,7 @@ class CropFertilizerPOSTSerializer(serializers.ModelSerializer):
 
 
 class FarmerGETSerializer(serializers.ModelSerializer):
-    crops = CropGETSerializer(many=True, read_only=True)  # Nested serialization of crops
+    crops = CropGETSerializer(many=True, read_only=True)  
 
     class Meta:
         model = Farmer

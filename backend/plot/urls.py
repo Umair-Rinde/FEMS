@@ -4,8 +4,8 @@ from crop.views import PlotAPIView
 
 urlpatterns = [
     path('water-resources/', WaterResourceAPIView.as_view(), name='water-resource-list'),
-    path('water-resources/<str:uuid>/', WaterResourceAPIView.as_view(), name='water-resource-detail'),
+    path('water-resources/<uuid:id>/', WaterResourceAPIView.as_view(), name='water-resource-detail'),
     
     path('plots/', PlotAPIView.as_view(), name='plot-list'),
-    path('plots/<str:uuid>/', PlotAPIView.as_view(), name='plot-detail'),
+    path('plots/<uuid:id>/', PlotAPIView.as_view(), name='plot-detail'),
 ]

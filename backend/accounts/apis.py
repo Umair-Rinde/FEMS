@@ -70,15 +70,15 @@ class UserRegistrationAPI(APIView):
             # send mail with otp
             # subject, body, to
             print(otp , user.username)
-            send_otp(user.phone, {})
-            EmailService(
-                f"""Confirm Your Registration with One-Time Password (OTP) """,
-                f"""Dear {user.username},\n\nThank you for registering with Dr. Babasaheb Ambedkar Technological University! To complete your registration, please use the following One-Time Password (OTP):  {otp}.\n\nPlease do not share this code with anyone.\n\nIf you did not request this registration, please ignore this email.\n\n Thank you,\n [ Dr. Babasaheb Ambedkar Technological University ]""",
-                [user.email, ],
-                [],
-            ).send()
+            # send_otp(user.phone, {})
+            # EmailService(
+            #     f"""Confirm Your Registration with One-Time Password (OTP) """,
+            #     f"""Dear {user.username},\n\nThank you for registering with Dr. Babasaheb Ambedkar Technological University! To complete your registration, please use the following One-Time Password (OTP):  {otp}.\n\nPlease do not share this code with anyone.\n\nIf you did not request this registration, please ignore this email.\n\n Thank you,\n [ Dr. Babasaheb Ambedkar Technological University ]""",
+            #     [user.email, ],
+            #     [],
+            # ).send()
 
             data = serializer.data
-            data['otp'] = otp
+            # data['otp'] = otp
             return Response(data, status=201)
         return Response(serializer.errors, status=400)

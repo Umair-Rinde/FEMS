@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 
-import { PageWraper } from "@/app/hoc";
-import { RadioInput, SelectInput, TextInput } from "@/app/components/inputs";
+import { PageWraper } from "../../hoc";
+import { RadioInput, SelectInput, TextInput } from "../../components/inputs";
 
 const CropSnowing = () => {
 	return (

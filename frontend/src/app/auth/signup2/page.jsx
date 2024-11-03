@@ -2,10 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { BsGoogle, BsFacebook, BsInstagram, BsTelegram, BsTwitterX } from 'react-icons/bs';
-import logoImg from '@/images/logo.png';
-import { CiUser, CiLock} from 'react-icons/ci';
+import logoImg from '../../../images/logo.png';
 import { FcGoogle } from "react-icons/fc";
 
 export default function SignupPage() {

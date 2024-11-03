@@ -1,4 +1,4 @@
-import { rice_crop, maize_crop, wheat_crop } from "@/images/crops";
+import { rice_crop, maize_crop, wheat_crop } from "../images/crops";
 
 export const yourCrops = [
     {

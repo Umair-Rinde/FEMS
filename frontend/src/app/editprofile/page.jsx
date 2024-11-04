@@ -16,7 +16,6 @@ const EditProfile = () => {
   const [region, setRegion] = useState(myprofile.region);
   const [cropsInfo, setCropsInfo] = useState(myprofile.cropsInfo);
   const [bio, setBio] = useState(myprofile.bio);
-  const [address, setAddress] = useState("");
 
   const handleSaveChanges = () => {
     alert('Changes saved!');
@@ -70,7 +69,6 @@ const EditProfile = () => {
           type="email"
           placeholder="e.g. abc@xyz.com"
         />
-        
         <TextInput 
           label="District"
           value={district}
@@ -82,12 +80,6 @@ const EditProfile = () => {
           value={region}
           onChange={(e) => setRegion(e.target.value)}
           placeholder="e.g. vidarbha (maharashtra)"
-        />
-        <TextArea 
-          label="Detailed Address"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          placeholder="Street 1 "
         />
         <div className="w-full flex flex-col">
           <label className="text-sm font-semibold pl-1">Crops</label>

@@ -3,7 +3,10 @@
 *.pyc
 __pycache__
 .env
+<<<<<<< HEAD
 /node_modules
+=======
+>>>>>>> 0bccf1b6420c09aba9a6a0dd2894619c4bbf6f75
 
 # Ignore all migration files except __init__.py inside any migrations folder
 **/migrations/*.py

@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+  /* hide for chrome, safari and opera */
+  .hide-scrollbar::-webkit-scrollbar{
+    display: none;
+  }
+  /* hide for IE,edge and firefox */
+  .hide-scrollbar{
+    -ms-overflow-style:none;
+    scrollbar-width: none;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.form-container {
+  @apply flex flex-col gap-10 w-full md:w-2/3 p-4 md:p-10 bg-light rounded-lg border-2;
+}
+
+.form-heading {
+  @apply  w-full text-xl md:text-2xl font-semibold border-b-2 border-black py-2 flex gap-5 items-center;
+}
+
+.form-grid {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6;
+}
+
+.form-btns-container {
+  @apply w-full flex justify-center items-center gap-5;
+}
+
+.form-btn {
+  @apply py-2 px-4 rounded-lg font-semibold;
+}

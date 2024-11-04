@@ -1,0 +1,19 @@
+/bin
+/lib
+*.pyc
+__pycache__
+.env
+/node_modules
+
+# Ignore all migration files except __init__.py inside any migrations folder
+**/migrations/*.py
+**/migrations/*.pyc
+**/migrations/__pycache__/
+!**/migrations/__init__.py
+/ezyEv/db.sqlite3
+# ezyEv\ezyev\db.sqlite3 # relative path
+/db.sqlite3
+.env
+/env
+
+\backend\db.sqlite3

@@ -20,6 +20,10 @@ JWT_SECRET = 'django-insecure-8s+^kju99+3hm!z6ag8qno)1d=26=)0eiiu(a8*o3k1+hl^$o@
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS=['*']
+CORS_ALLOW_HEADERS = ["*"]
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000",'*']
 
 
 # Application definition

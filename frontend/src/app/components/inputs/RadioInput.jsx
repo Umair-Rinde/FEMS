@@ -1,3 +1,4 @@
+"use client";
 
 const RadioInput = ({label, name, onSelect, options }) => {
 	return (

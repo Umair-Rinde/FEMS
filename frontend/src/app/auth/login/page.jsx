@@ -7,16 +7,43 @@ import { CiUser, CiLock} from 'react-icons/ci';
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
 
+import API_URL from '../../../utils/url';
+
 const Login = () => {
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const onLogin = async (e)  => {
+        e.preventDefault();
+        // Here you can implement the logic to sign up the user
+        const data = {
+            email,
+            password,
+        };
+    
+        let res = await fetch(API_URL + "/accounts/login/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+    
+        if(res.ok){
+            res = await res.json();
+            console.log(res);
+            console.log('Login successfully');
+        } else {
+            console.log('Login failed', res.status);
+        }
+      };
 
     return (
         <main className="h-screen w-screen bg-green-800 flex justify-end">
             <section className="bg-green-2 h-screen w-screen flex items-center justify-center lg:w-1/2 lg:rounded-2xl
-                transtion-all duration-200 ease-linear"
+                transtion-all duration-200 ease-linear bg-green-1"
             >
-                <div className="bg-green-1 flex flex-col gap-6 items-center py-4 px-5 rounded-2xl lg:rounded-4xl w-4/5 lg:w-3/5"
+                <div className="bg-white flex flex-col gap-6 items-center py-4 px-5 rounded-2xl lg:rounded-4xl w-4/5 lg:w-3/5"
                     style={{
                         boxShadow: '5px 5px 10px #00000040',
                     }}
@@ -33,10 +60,10 @@ const Login = () => {
                     </h2>
                     <form className="w-full flex flex-col items-center gap-3">
                         <InputField 
-                            placeholder="Username"
-                            value={username}
+                            placeholder="Email"
+                            value={email}
                             icon={<CiUser />}
-                            onChange={(e) => setUsername(e.target.value)}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                         <InputField 
                             placeholder="Password"
@@ -46,7 +73,10 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <Link href="/forgot-password" className="font-semibold text-xs my-2">Forgot password?</Link>
-                        <button className="bg-black hover:bg-gray-800 w-full py-3 text-sm font-semibold text-center text-white rounded-2xl">
+                        <button 
+                            className="bg-black hover:bg-gray-800 w-full py-3 text-sm font-semibold text-center text-white rounded-2xl"
+                            onClick={(e) => onLogin(e)}
+                        >
                             Login
                         </button>
                         <divider className="flex items-center w-full justify-center my-1">

@@ -62,3 +62,7 @@ body {
 .form-btn {
   @apply py-2 px-4 rounded-lg font-semibold;
 }
+
+.bg-green-1 {
+  @apply bg-[#B3FFB3]
+}

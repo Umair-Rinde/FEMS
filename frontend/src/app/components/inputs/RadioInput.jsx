@@ -1,6 +1,6 @@
 "use client";
 
-const RadioInput = ({label, name, onSelect, options }) => {
+const RadioInput = ({label, name, onChange, options }) => {
 	return (
 		<div className="w-full flex flex-col gap-1 px-2 mt-1">
 			<label className="font-semibold ml-1 text-sm">{label}</label>
@@ -11,7 +11,7 @@ const RadioInput = ({label, name, onSelect, options }) => {
 								type="radio" 
 								name={name} 
 								value={option}
-								onSelect={onSelect}
+								onChange={onChange}
 						/>
 						<label className="text-lg font-semibold">{option}</label>
 					</span>

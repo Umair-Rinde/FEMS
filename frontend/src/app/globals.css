@@ -58,3 +58,8 @@ body {
 .bg-green-1 {
   @apply bg-[#B3FFB3]
 }
+
+table, th, td {
+  border: 1px solid #00e600;
+  padding: 2px 8px;
+}

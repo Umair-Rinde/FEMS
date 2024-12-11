@@ -34,21 +34,25 @@ const Header = () => {
 							className="w-5 h-5"
 						/>
 					</span>
-					<select className={`${styles.headerBtn} bg-gray-200 w-20 md:w-40`}>
-						<option selected disabled>Region</option>
-						<option>Kokan - Maharashtra</option>
-						<option>Vidarbha - Maharashtra</option>
-						<option>Kunnur - Kerala</option>
+					<select className={`${styles.headerBtn} bg-gray-100 w-20 md:w-40`}
+						defaultValue=""
+					>
+						<option value="" disabled>Region</option>
+						<option value="kokan">Kokan - Maharashtra</option>
+						<option value="vidarbha">Vidarbha - Maharashtra</option>
+						<option value="kunur">Kunnur - Kerala</option>
 					</select>
-					<select className={`${styles.headerBtn} bg-gray-200 w-20 md:w-40`}>
-						<option selected disabled>Language</option>
-						<option>English</option>
-						<option>Hindi</option>
-						<option>Marathi</option>
+					<select className={`${styles.headerBtn} bg-gray-100 w-20 md:w-40`}
+						defaultValue=""
+					>
+						<option value="" disabled>Language</option>
+						<option value="">English</option>
+						<option value="hindi">Hindi</option>
+						<option value="marathi">Marathi</option>
 					</select>
 				</div>
 				<div className="flex gap-3 items-center">
-					<button className={`${styles.headerBtn} bg-gray-200 hover:bg-gray-300`}>Settings</button>
+					<button className={`${styles.headerBtn} bg-gray-100 hover:bg-gray-200`}>Settings</button>
 					<button className={`${styles.headerBtn} bg-tertiary hover:opacity-80 text-white hidden md:block`}>Share</button>
 					{/* Link to Profile here */}
 				</div>

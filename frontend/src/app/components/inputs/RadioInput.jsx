@@ -6,7 +6,7 @@ const RadioInput = ({label, name, onSelect, options }) => {
 			<label className="font-semibold ml-1 text-sm">{label}</label>
 			<div className="flex gap-8 py-1 px-2">
 				{options.map((option) => (
-					<span className="flex gap-2 items-center justify-center pt-1">
+					<span className="flex gap-2 items-center justify-center pt-1" key={option}>
 						<input 
 								type="radio" 
 								name={name} 

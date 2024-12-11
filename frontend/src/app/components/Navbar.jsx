@@ -17,7 +17,7 @@ const NavItem = ({title, path, options}) => {
           absolute left-0 top-[90%] border rounded-lg bg-white-100 backdrop-blur"
         >
           {options.map((option) => (
-            <Link href={option.path} className="px-3 py-2 w-fit hover:text-tertiary">
+            <Link href={option.path} className="px-3 py-2 w-fit hover:text-tertiary" key={option.title}>
               {option.title}
             </Link>
           ))}
@@ -46,6 +46,7 @@ const NavItemMobile = ({title, path, options}) => {
           <ul className="flex flex-col list-none p-2">
             {options.map((option) => (
               <Link href={option.path} 
+                key={option.path}
                 className="text-gray-700 focus:text-tertiary py-2 font-bold"
               >
                 {option.title}
@@ -76,6 +77,7 @@ const Navbar = () => {
             title={navlink.title} 
             path={navlink?.path}
             options={navlink?.options}
+            key={navlink.title}
           />
         ))}
       </ul>
@@ -99,6 +101,7 @@ const Navbar = () => {
                 title={navlink.title} 
                 path={navlink?.path}
                 options={navlink?.options}
+                key={navlink.title}
               />
             ))}
           </ul>

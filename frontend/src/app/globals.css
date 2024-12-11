@@ -17,16 +17,6 @@
   scrollbar-width: none;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 *::-webkit-scrollbar {
   display: none;
 }
@@ -36,7 +26,7 @@ body {
 }
 
 .form-container {
-  @apply flex flex-col gap-10 w-full md:w-2/3 p-4 md:p-10 bg-light rounded-lg border-2;
+  @apply flex flex-col gap-5 w-full md:w-2/3 p-4 md:p-10 bg-light rounded-lg border-2;
 }
 
 .form-heading {
@@ -57,4 +47,12 @@ body {
 
 .bg-green-1 {
   @apply bg-[#B3FFB3]
+}
+
+table, th, td {
+  @apply border px-3 py-2 border-[#1e861e] text-center;
+}
+
+th {
+  @apply bg-[#00e600] border-[#1e861e];
 }

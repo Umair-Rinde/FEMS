@@ -1,10 +1,19 @@
 "use client";
 import { useState } from "react";
 
-import { PageWraper } from "../../app/hoc";
-import { RadioInput, SelectInput, TextInput } from "../components/inputs";
+import { PageWraper } from "../hoc";
+import { RadioInput, SelectInput, TextInput } from "@/app/components/inputs";
 
 const CropPlanning = () => {
+	const [cropCode, setCropCode] = useState("");
+	const [variety, setVariety] = useState("");
+	const [season, setSeason] = useState("");
+	const [plotNumber, setPlotNumber] = useState("");
+	const [area, setArea] = useState("");
+	const [mixedCropping, setMixedCropping] = useState(null);
+	const [seedRequired, setSeedRequired] = useState(null);
+	const [fertilizer, setFertilizer] = useState(null);
+	const [manpower, setManpower] = useState(null);
 	return (
 		<main className="form-container">
 			<h1 className="form-heading">Crop Planning</h1>

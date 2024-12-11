@@ -1,6 +1,8 @@
+"use client";
+import { PageWraper } from './hoc';
 
-import { PageWraper } from '../app/hoc' 
 const HomePage = () => {
+  
   return (
     <div className="h-screen">Homepage</div>
   )

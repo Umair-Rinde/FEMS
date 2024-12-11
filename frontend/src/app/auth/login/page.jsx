@@ -6,12 +6,14 @@ import { useState } from 'react';
 import { CiUser, CiLock} from 'react-icons/ci';
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import API_URL from '../../../utils/url';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const router = useRouter();
 
     const onLogin = async (e)  => {
         e.preventDefault();
@@ -20,22 +22,31 @@ const Login = () => {
             email,
             password,
         };
-    
-        let res = await fetch(API_URL + "/accounts/login/", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-    
-        if(res.ok){
-            res = await res.json();
-            console.log(res);
-            console.log('Login successfully');
+
+        const mypassword = "shubham12";
+        if(password === mypassword) {
+            localStorage.setItem('email', email);
+            router.push('/');
         } else {
-            console.log('Login failed', res.status);
+            alert('wrong password!');
         }
+    
+        // let res = await fetch(API_URL + "/accounts/login/", {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data),
+        // });
+    
+        // if(res.ok){
+        //     res = await res.json();
+        //     console.log(res);
+        //     console.log('Login successfully');
+        //     localStorage.setItem('email', email);
+        // } else {
+        //     console.log('Login failed', res.status);
+        // }
       };
 
     return (

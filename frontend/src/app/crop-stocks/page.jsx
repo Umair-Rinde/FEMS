@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-import { PageWraper } from "../hoc";
+import { PageWraper } from "@/app/hoc";
 import { SelectInput, TextInput } from "../components/inputs";
 import Table from '@/app/components/Table';
 

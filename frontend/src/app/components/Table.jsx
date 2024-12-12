@@ -1,3 +1,4 @@
+"use client";
 
 const Table = ({data, setData}) => {
     if(!data || data.length === 0) {

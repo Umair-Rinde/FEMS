@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import { PageWraper } from "../hoc";
-import { yourCrops, relatedCrops } from '../../constants';
+import { yourCrops, relatedCrops } from "@/constants";
 
 const CropCard = ({index, name, variety, rate, img}) => {
   return (

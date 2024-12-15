@@ -22,31 +22,26 @@ const Login = () => {
             email,
             password,
         };
-
-        const mypassword = "shubham12";
-        if(password === mypassword) {
-            localStorage.setItem('email', email);
-            router.push('/');
+        
+    
+        let res = await fetch(API_URL + "/accounts/login/", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+    
+        if(res.ok){
+            res = await res.json();
+            console.log(res);
+            console.log('Login successfully');
+            const userData = JSON.stringify(res);
+            localStorage.setItem('userData', userData);
+            router.push('/')
         } else {
-            alert('wrong password!');
+            console.log('Login failed', res.status);
         }
-    
-        // let res = await fetch(API_URL + "/accounts/login/", {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data),
-        // });
-    
-        // if(res.ok){
-        //     res = await res.json();
-        //     console.log(res);
-        //     console.log('Login successfully');
-        //     localStorage.setItem('email', email);
-        // } else {
-        //     console.log('Login failed', res.status);
-        // }
       };
 
     return (
@@ -59,12 +54,13 @@ const Login = () => {
                         boxShadow: '5px 5px 10px #00000040',
                     }}
                 >
-                    <logo className="bg-white rounded-full p-4 w-fit">
+                    <span className="bg-white rounded-full p-4 w-fit">
                         <Image 
                             src={logoImg}
                             className="w-24 h-24"
+                            alt="Logo Image"
                         />
-                    </logo>
+                    </span>
                     <h2 className="flex flex-col items-center gap-2">
                         <span className="text-green-600 font-bold">Empowering Farmers Digitally</span>
                         <span className="text-green-900 font-bold">Welcome</span>

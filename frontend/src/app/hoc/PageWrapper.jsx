@@ -9,11 +9,13 @@ const PageWraper = (PageComponent, id = null) =>
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-      let email = localStorage.getItem('email');
-      if(email){
-        setLoading(false);
-      } else {
+      let userData = localStorage.getItem('userData');
+      userData = JSON.parse(userData);
+      
+      if(!userData || !userData.email){
         router.push('/auth/login');
+      } else {
+        setLoading(false);
       }
     }, [])
 
@@ -27,7 +29,7 @@ const PageWraper = (PageComponent, id = null) =>
       <div className="w-full min-h-screen flex flex-col bg-white">
         <Header />
         <Navbar />
-        <div className="flex items-center justify-center min-h-screen w-full py-10 px-4 md:px-20">
+        <div className="flex items-center justify-center py-10 w-full px-4 md:px-20">
           <PageComponent />
         </div>
         <Footer />

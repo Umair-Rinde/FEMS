@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
 import { BsSearch } from "react-icons/bs";
+import Link from "next/link";
 
-import { fems_logo } from "../../images";
-import { styles } from "../../styles";
+import { fems_logo, sample_profile_img } from "@/images";
+import { styles } from "@/styles";
 
 const Header = () => {
 	return (
@@ -56,6 +57,13 @@ const Header = () => {
 					<button className={`${styles.headerBtn} bg-gray-100 hover:bg-gray-200`}>Settings</button>
 					<button className={`${styles.headerBtn} bg-tertiary hover:opacity-80 text-white hidden md:block`}>Share</button>
 					{/* Link to Profile here */}
+					<Link className="w-10 h-10" href="/editprofile">
+						<Image 
+							src={sample_profile_img}
+							alt="Profile Image"
+							className="w-full h-full rounded-full"
+						/>
+					</Link>
 				</div>
 			</section>
 		</header>

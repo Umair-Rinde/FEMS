@@ -1,9 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { PageWraper } from "@/app/hoc";
-import { SelectInput, TextInput } from "../components/inputs";
+import { SelectInput, TextInput } from "@/app/components/inputs";
 import Table from '@/app/components/Table';
+
+import API_URL from "@/utils/url";
 
 const CurrentCropStocks = () => {
 	const [cropCode, setCropCode] = useState("");
@@ -15,6 +17,50 @@ const CurrentCropStocks = () => {
 	const [sellingDate, setSellingDate] = useState("");
 
 	const [cropStocks, setCropStocks] = useState([]);
+
+	useEffect(() => {
+		getAllCrops();
+	}, []);
+
+	const getAllCrops = async () => {
+		try {
+			let userData = localStorage.getItem('userData');
+			userData = JSON.parse(userData);
+
+			const token = userData.token;
+			
+			const response = await fetch(API_URL + "/crop", {
+				headers: {
+					'Authorization': token,
+				}
+			});
+			const result = await response.json();
+			const allcrops = result.rows;
+			console.log("Crops\n", allcrops);
+			const processedCropData = getProcessedCrops(allcrops);
+			setCropStocks(processedCropData);
+		} catch (e) {
+			console.warn(e);
+		}
+	}
+
+	const getProcessedCrops = (crops) => {
+		const processedCrops = [];
+		crops.forEach(prevCrop => {
+			const crop = {
+				cropCode: prevCrop.cropCode ?? "NA-Crop-Code",
+				cropName: prevCrop.name ?? "NA-Crop-Name",
+				variety: prevCrop.variety ?? "NA-Crop-Variety",
+				season: prevCrop.season ?? "NA-Season",
+				quantityOnHold: prevCrop.quantityOnHold ?? "NA-Quantity",
+				quantitySold: prevCrop.quantitySold ?? "NA-Quantity",
+				harvestingDate: prevCrop.harvestingDate ?? "NA-Date",
+				sellingDate: prevCrop.sellingDate ?? "NA-Date",
+			};
+			processedCrops.push(crop);
+		});
+		return processedCrops;
+	}
 
 	const reset = () => {
 		setCropCode('');
@@ -35,6 +81,7 @@ const CurrentCropStocks = () => {
 		else {
 			const newEntry = {
 				cropCode,
+				cropName: 'Crop' + cropCode,
 				variety,
 				season,
 				quantityOnHold,
@@ -48,8 +95,18 @@ const CurrentCropStocks = () => {
 		};
 	}
 
+	const saveCropStocks = async (e) => {
+		e.preventDefault();
+		try {
+			const res = await fetch(API_URL + '/crop');
+
+		} catch (e) {
+			console.log(e);
+		}
+	}
+
 	return (
-		<main className="flex flex-col gap-10 justify-center items-center">
+		<main className="w-full flex flex-col gap-10 justify-center items-center">
 			<div className="form-container">
 				<h1 className="form-heading">Current stock</h1>
 				<div className="form-grid">

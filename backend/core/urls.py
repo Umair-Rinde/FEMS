@@ -7,8 +7,6 @@ from .apis import getchargedbattery, openEmptySlot
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/get-charged-battery/', getchargedbattery),
-    path('api/open-empty-slot/', openEmptySlot),
 
     path('api/accounts/', include('accounts.urls')),
     path('api/crop/',include('crop.urls')),

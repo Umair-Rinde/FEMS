@@ -20,6 +20,7 @@ class User(AbstractBaseUser):
         ('SUPPLIER', 'SUPPLIER'),
     )
     full_name = models.CharField(max_length=128)
+    otp = models.CharField(max_length=10)
     user_type = models.CharField(max_length=10, default='ADMIN', choices=ROLES)
     gender    = models.CharField(max_length=10, default='MALE')
     email     = models.EmailField(max_length=255, unique=True, blank=True, null=True)

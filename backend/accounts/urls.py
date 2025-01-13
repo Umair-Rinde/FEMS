@@ -1,6 +1,5 @@
 from .apis import *
 from django.urls import path
-from .apis import UserOtpVerificationAPI
 from crop.views import FarmerAPIView
 
 urlpatterns = [

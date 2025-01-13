@@ -47,7 +47,7 @@ git clone https://github.com/your-username/farmer-empowerment-management-system.
 Navigate to the project directory and set up a virtual environment with Python 3.10.
 
 ```bash
-cd farmer-empowerment-management-system
+cd FEMS
 cd backend
 python3.10 -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -55,10 +55,10 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 ### 3. Install Backend Dependencies
 
-Install all the required Python packages using `pip` and the `requirements.txt` file.
+Install all the required Python packages using `pip` and the `req.txt` file.
 
 ```bash
-pip install -r requirements.txt
+pip install -r req.txt
 ```
 
 ### 4. Set Up Environment Variables
@@ -82,7 +82,7 @@ Create a new PostgreSQL database for the project.
 psql -U postgres
 
 # Inside psql, create the database
-CREATE DATABASE your_database_name;
+CREATE DATABASE fems;
 
 # Exit psql
 \q
